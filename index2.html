@@ -126,10 +126,10 @@
             <span class="inline-block h-2 w-2 rounded-full bg-brand.pink animate-pulse"></span>
             Transformação Digital com Precisão
           </div>
-          <h1 class="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
-            Saia do caos e <span class="bg-gradient-to-r from-brand.pink to-brand.purple bg-clip-text">opere com precisão cirúrgica</span>
+          <h1 class="mt-4 text-3xl font-extrabold  tracking-tight sm:text-5xl">
+            Como aumentar em <strong>247%</strong> a geração de leads qualificados em 60 dias.</span>
           </h1>
-          <p class="mt-4 text-white/70 max-w-xl">Diagnóstico estratégico, UX que converte e automações inteligentes para escalar sua operação. Validamos ideias em dias, não meses.</p>
+          <p class="mt-4 text-white/70 max-w-xl">Sem softwares caros, sem equipes adicionais, sem meses de implementação. Apenas um sistema simples que triplica seu ROI de campanhas — mesmo se já tenha tentado otimizar várias vezes e falhou.</p>
           <div class="mt-6 flex flex-col sm:flex-row gap-3">
             <a href="#contato" class="group inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand.pink to-brand.purple px-6 py-3 font-semibold shadow-soft focus:outline-none focus:ring-2 focus:ring-brand">
               Agendar diagnóstico
@@ -150,10 +150,11 @@
         <div class="relative will-reveal">
           <div class="relative mx-auto w-full max-w-md rounded-3xl border border-white/10 bg-[#14141A] p-5 shadow-soft animate-glow">
             <div class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-brand.pink/30 to-brand.purple/30 ring-1 ring-inset ring-white/10 grid place-items-center overflow-hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-20 w-20 opacity-80 animate-float" fill="none" stroke="currentColor" stroke-width="1.2">
+                <img src="img/hero-illustration.jpg" alt="" style="margin-top: -50px">
+              <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-20 w-20 opacity-80 animate-float" fill="none" stroke="currentColor" stroke-width="1.2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 7.5h18M3 12h18M3 16.5h18"/>
-              </svg>
-              <div class="absolute inset-0 opacity-30" style="background: radial-gradient(600px circle at 0% 0%, rgba(255,60,172,.25), transparent 40%), radial-gradient(600px circle at 100% 100%, rgba(108,99,255,.25), transparent 40%)"></div>
+              </svg>-->
+              <div class="absolute inset-0 opacity-30" style="background: radial-gradient(600px circle at 0% 0%, rgba(255,60,172,.25), transparent 40%), radial-gradient(600px circle at 100% 100%, rgba(108,99,255,.25), transparent 40%)"></div> 
             </div>
             <div class="mt-4 grid grid-cols-2 gap-3 text-xs text-white/70">
               <div class="rounded-xl border border-white/10 bg-white/5 p-3">
@@ -182,7 +183,10 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="will-reveal text-center">
         <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Estratégia, Experiência e Automação</h2>
-        <p class="mt-3 text-white/70">Um fluxo completo: do diagnóstico à otimização contínua.</p>
+        <p class="mt-3 text-white/70">
+            O problema não é o tráfego é a ausência de um funil que converta com precisão cirúrgica.
+Nós implementamos um método proprietário que transforma visitantes casuais em compradores obsessivos em menos de 90 dias. Sem achismos, sem fórmulas genéricas.</p>
+<small> Apenas processos validados para multiplicar seu faturamento.</small>
       </div>
 
       <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -349,8 +353,8 @@
         <div class="absolute inset-0 -z-10 opacity-30" style="background: radial-gradient(600px circle at 20% 0%, rgba(255,60,172,.35), transparent 40%), radial-gradient(600px circle at 80% 100%, rgba(108,99,255,.35), transparent 40%)"></div>
         <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
           <div>
-            <h3 class="text-2xl font-bold">Pronto para operar com precisão?</h3>
-            <p class="mt-1 text-white/70">Solicite seu diagnóstico estratégico e receba um blueprint claro em até 7 dias.</p>
+            <h3 class="text-2xl font-bold">Garanta sua vaga na implementação deste mês</h3>
+            <p class="mt-1 text-white/70">Estamos abrindo 5 projetos de implementação em <span id="mesAtual"></span>. Depois disso, apenas lista de espera.</p>
           </div>
           <a href="#contato" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand.pink to-brand.purple px-6 py-3 font-semibold shadow-soft focus:outline-none focus:ring-2 focus:ring-brand">Solicitar diagnóstico</a>
         </div>
@@ -426,6 +430,19 @@
       });
     }, revealOpts);
     document.querySelectorAll('.will-reveal').forEach((el) => io.observe(el));
+
+        // Lista com os nomes dos meses
+        const meses = [
+            "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+            "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+        ];
+
+        // Pega o mês atual (0-11)
+        const data = new Date();
+        const mes = meses[data.getMonth()];
+
+        // Insere no span
+        document.getElementById("mesAtual").textContent = mes;
   </script>
 </body>
 </html>
