@@ -1,30 +1,26 @@
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuIcon = mobileMenuBtn.querySelector('i');
+    // Mobile Menu Toggle - CORRIGIDO: ID correto do HTML
+    const mobileMenuBtn = document.getElementById('mobileMenu');
+    const mobileMenu = document.getElementById('mobileMenuBtn');
     
-    mobileMenuBtn.addEventListener('click', function() {
-        mobileMenu.classList.toggle('hidden');
-        
-        // Toggle icon
-        if (mobileMenu.classList.contains('hidden')) {
-            mobileMenuIcon.className = 'ri-menu-line text-2xl';
-        } else {
-            mobileMenuIcon.className = 'ri-close-line text-2xl';
-        }
-    });
-
-    // Close mobile menu when clicking on links
-    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-    mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            mobileMenu.classList.add('hidden');
-            mobileMenuIcon.className = 'ri-menu-line text-2xl';
+    // Verificar se os elementos existem antes de usar
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
         });
-    });
+
+        // Close mobile menu when clicking on links - VERIFICAÇÃO ADICIONAL
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        if (mobileMenuLinks.length > 0) {
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+    }
 
     // Smooth Scroll for Navigation Links
     const navLinks = document.querySelectorAll('a[href^="#"]');
@@ -53,10 +49,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (window.scrollY > 100) {
             header.classList.add('bg-white/95', 'shadow-sm');
             header.classList.remove('bg-white/95');
-            header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            // header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
             header.style.backdropFilter = 'blur(10px)';
         } else {
-            header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            // header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
             header.style.backdropFilter = 'blur(10px)';
         }
     });
@@ -90,113 +86,123 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', updateActiveLink);
 
     // Form Validation and Submission
-    const contactForm = document.getElementById('contact-form');
-    const formInputs = contactForm.querySelectorAll('input, textarea');
+    const contactForm = document.getElementById('form-contato'); // ✅ Corrigido para o ID correto
+    
+    if (contactForm) {
+        const formInputs = contactForm.querySelectorAll('input, textarea');
 
-    // Add input validation styles
-    formInputs.forEach(input => {
-        input.addEventListener('blur', function() {
-            validateInput(this);
-        });
-
-        input.addEventListener('input', function() {
-            if (this.classList.contains('border-red-500')) {
-                validateInput(this);
-            }
-        });
-    });
-
-    function validateInput(input) {
-        const value = input.value.trim();
-        const isRequired = input.hasAttribute('required');
-        const isEmail = input.type === 'email';
-
-        // Remove previous validation classes
-        input.classList.remove('border-red-500', 'border-green-500');
-        
-        // Remove previous error message
-        const existingError = input.parentNode.querySelector('.error-message');
-        if (existingError) {
-            existingError.remove();
-        }
-
-        let isValid = true;
-        let errorMessage = '';
-
-        // Required field validation
-        if (isRequired && !value) {
-            isValid = false;
-            errorMessage = 'Este campo é obrigatório';
-        }
-        // Email validation
-        else if (isEmail && value && !isValidEmail(value)) {
-            isValid = false;
-            errorMessage = 'Por favor, insira um email válido';
-        }
-
-        // Apply validation styles
-        if (!isValid) {
-            input.classList.add('border-red-500');
-            
-            // Add error message
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'error-message text-red-500 text-sm mt-1';
-            errorDiv.textContent = errorMessage;
-            input.parentNode.appendChild(errorDiv);
-        } else if (value) {
-            input.classList.add('border-green-500');
-        }
-
-        return isValid;
-    }
-
-    function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-
-    // Form submission
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        let isFormValid = true;
-        const formData = new FormData();
-
-        // Validate all inputs
-        formInputs.forEach(input => {
-            if (!validateInput(input)) {
-                isFormValid = false;
-            } else {
-                formData.append(input.name, input.value);
-            }
-        });
-
-        if (isFormValid) {
-            // Show loading state
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Enviando...';
-            submitBtn.disabled = true;
-
-            // Simulate form submission (replace with actual API call)
-            setTimeout(() => {
-                // Show success message
-                showNotification('Mensagem enviada com sucesso! Entraremos em contato em breve.', 'success');
-                
-                // Reset form
-                contactForm.reset();
-                formInputs.forEach(input => {
-                    input.classList.remove('border-green-500', 'border-red-500');
+        // Verificar se há inputs antes de continuar
+        if (formInputs.length > 0) {
+            // Add input validation styles
+            formInputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    validateInput(this);
                 });
 
-                // Reset button
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 2000);
-        } else {
-            showNotification('Por favor, corrija os erros no formulário.', 'error');
+                input.addEventListener('input', function() {
+                    if (this.classList.contains('border-red-500')) {
+                        validateInput(this);
+                    }
+                });
+            });
         }
-    });
+
+        function validateInput(input) {
+            const value = input.value.trim();
+            const isRequired = input.hasAttribute('required');
+            const isEmail = input.type === 'email';
+
+            // Remove previous validation classes
+            input.classList.remove('border-red-500', 'border-green-500');
+            
+            // Remove previous error message
+            const existingError = input.parentNode.querySelector('.error-message');
+            if (existingError) {
+                existingError.remove();
+            }
+
+            let isValid = true;
+            let errorMessage = '';
+
+            // Required field validation
+            if (isRequired && !value) {
+                isValid = false;
+                errorMessage = 'Este campo é obrigatório';
+            }
+            // Email validation
+            else if (isEmail && value && !isValidEmail(value)) {
+                isValid = false;
+                errorMessage = 'Por favor, insira um email válido';
+            }
+
+            // Apply validation styles
+            if (!isValid) {
+                input.classList.add('border-red-500');
+                
+                // Add error message
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error-message text-red-500 text-sm mt-1';
+                errorDiv.textContent = errorMessage;
+                input.parentNode.appendChild(errorDiv);
+            } else if (value) {
+                input.classList.add('border-green-500');
+            }
+
+            return isValid;
+        }
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Form submission
+        if (formInputs.length > 0) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                let isFormValid = true;
+                const formData = new FormData();
+
+                // Validate all inputs
+                formInputs.forEach(input => {
+                    if (!validateInput(input)) {
+                        isFormValid = false;
+                    } else {
+                        formData.append(input.name || input.id, input.value);
+                    }
+                });
+
+                if (isFormValid) {
+                    // Show loading state
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    if (submitBtn) {
+                        const originalText = submitBtn.textContent;
+                        submitBtn.textContent = 'Enviando...';
+                        submitBtn.disabled = true;
+
+                        // Simulate form submission (replace with actual API call)
+                        setTimeout(() => {
+                            // Show success message
+                            showNotification('Mensagem enviada com sucesso! Entraremos em contato em breve.', 'success');
+                            
+                            // Reset form
+                            contactForm.reset();
+                            formInputs.forEach(input => {
+                                input.classList.remove('border-green-500', 'border-red-500');
+                            });
+
+                            // Reset button
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                        }, 2000);
+                    }
+                } else {
+                    showNotification('Por favor, corrija os erros no formulário.', 'error');
+                }
+            });
+        }
+    }
 
     // Notification system
     function showNotification(message, type = 'info') {
@@ -215,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="flex items-center justify-between">
                 <span>${message}</span>
                 <button class="ml-4 text-white hover:text-gray-200" onclick="this.parentElement.parentElement.remove()">
-                    <i class="ri-close-line"></i>
+                    ✕
                 </button>
             </div>
         `;
@@ -356,30 +362,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Observe statistics section
     const statsSection = document.querySelector('#sobre');
-    const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const statNumbers = entry.target.querySelectorAll('.gradient-bg .text-4xl');
-                statNumbers.forEach(stat => {
-                    const text = stat.textContent;
-                    const number = parseInt(text.replace(/\D/g, ''));
-                    if (number && !stat.classList.contains('animated')) {
-                        stat.classList.add('animated');
-                        animateCounter(stat, number);
-                    }
-                });
-                statsObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
     if (statsSection) {
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.gradient-bg .text-4xl');
+                    statNumbers.forEach(stat => {
+                        const text = stat.textContent;
+                        const number = parseInt(text.replace(/\D/g, ''));
+                        if (number && !stat.classList.contains('animated')) {
+                            stat.classList.add('animated');
+                            animateCounter(stat, number);
+                        }
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
         statsObserver.observe(statsSection);
     }
 
     // Scroll to top functionality
     const scrollToTopBtn = document.createElement('button');
-    scrollToTopBtn.innerHTML = '<i class="ri-arrow-up-line"></i>';
+    scrollToTopBtn.innerHTML = '↑';
     scrollToTopBtn.className = 'fixed bottom-6 right-6 w-12 h-12 gradient-bg text-white rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:opacity-90 z-40';
     scrollToTopBtn.style.transform = 'translateY(100px)';
     document.body.appendChild(scrollToTopBtn);
@@ -421,68 +427,71 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('🚀 Droply Landing Page carregada com sucesso!');
 });
 
-  document.getElementById("year").textContent = new Date().getFullYear();
+// Funcionalidades que já estavam funcionando no final do arquivo
+document.getElementById("year").textContent = new Date().getFullYear();
 
-      const openBtn = document.getElementById("openMenu");
-      const mobileMenu = document.getElementById("mobileMenu");
-      openBtn?.addEventListener("click", () =>
+const openBtn = document.getElementById("mobile-menu"); // ✅ Corrigido
+const mobileMenu = document.getElementById("mobileMenu");
+// Verificação de segurança
+if (openBtn && mobileMenu) {
+    openBtn.addEventListener("click", () =>
         mobileMenu.classList.toggle("hidden")
-      );
+    );
+}
 
-      // Reveal on scroll
-      const revealOpts = { threshold: 0.12 };
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+// Reveal on scroll
+const revealOpts = { threshold: 0.12 };
+const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
             entry.target.classList.add("revealed", "animate-fadeUp");
             io.unobserve(entry.target);
-          }
-        });
-      }, revealOpts);
-      document.querySelectorAll(".will-reveal").forEach((el) => io.observe(el));
+        }
+    });
+}, revealOpts);
 
-      // Lista com os nomes dos meses
-      const meses = [
-        "Janeiro",
-        "Fevereiro",
-        "Março",
-        "Abril",
-        "Maio",
-        "Junho",
-        "Julho",
-        "Agosto",
-        "Setembro",
-        "Outubro",
-        "Novembro",
-        "Dezembro",
-      ];
+const revealElements = document.querySelectorAll(".will-reveal");
+if (revealElements.length > 0) {
+    revealElements.forEach((el) => io.observe(el));
+}
 
-      // Pega o mês atual (0-11)
-      const data = new Date();
-      const mes = meses[data.getMonth()];
+// Lista com os nomes dos meses
+const meses = [
+    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+    "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+];
 
-      // Insere no span
-      document.getElementById("mesAtual").textContent = mes;
+// Pega o mês atual (0-11)
+const data = new Date();
+const mes = meses[data.getMonth()];
 
-      const telefoneInput = document.getElementById("telefone");
+// Insere no span - com verificação de segurança
+const mesAtualElement = document.getElementById("mesAtual");
+if (mesAtualElement) {
+    mesAtualElement.textContent = mes;
+}
 
-      telefoneInput.addEventListener("input", function (e) {
+const telefoneInput = document.getElementById("telefone");
+
+if (telefoneInput) {
+    telefoneInput.addEventListener("input", function (e) {
         let valor = e.target.value.replace(/\D/g, ""); // Remove tudo que não é número
 
         if (valor.length > 11) valor = valor.slice(0, 11); // Limita a 11 dígitos
 
         if (valor.length > 10) {
-          // Formato celular: (99) 99999-9999
-          valor = valor.replace(/^(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
+            // Formato celular: (99) 99999-9999
+            valor = valor.replace(/^(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
         } else if (valor.length > 6) {
-          // Formato fixo: (99) 9999-9999
-          valor = valor.replace(/^(\d{2})(\d{4})(\d{0,4})$/, "($1) $2-$3");
+            // Formato fixo: (99) 9999-9999
+            valor = valor.replace(/^(\d{2})(\d{4})(\d{0,4})$/, "($1) $2-$3");
         } else if (valor.length > 2) {
-          // Apenas DDD e parte do número
-          valor = valor.replace(/^(\d{2})(\d{0,5})$/, "($1) $2");
+            // Apenas DDD e parte do número
+            valor = valor.replace(/^(\d{2})(\d{0,5})$/, "($1) $2");
         } else {
-          valor = valor.replace(/^(\d*)$/, "($1");
+            valor = valor.replace(/^(\d*)$/, "($1");
         }
 
         e.target.value = valor;
-      });
+    });
+}
