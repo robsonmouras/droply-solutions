@@ -421,3 +421,68 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('🚀 Droply Landing Page carregada com sucesso!');
 });
 
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+      const openBtn = document.getElementById("openMenu");
+      const mobileMenu = document.getElementById("mobileMenu");
+      openBtn?.addEventListener("click", () =>
+        mobileMenu.classList.toggle("hidden")
+      );
+
+      // Reveal on scroll
+      const revealOpts = { threshold: 0.12 };
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed", "animate-fadeUp");
+            io.unobserve(entry.target);
+          }
+        });
+      }, revealOpts);
+      document.querySelectorAll(".will-reveal").forEach((el) => io.observe(el));
+
+      // Lista com os nomes dos meses
+      const meses = [
+        "Janeiro",
+        "Fevereiro",
+        "Março",
+        "Abril",
+        "Maio",
+        "Junho",
+        "Julho",
+        "Agosto",
+        "Setembro",
+        "Outubro",
+        "Novembro",
+        "Dezembro",
+      ];
+
+      // Pega o mês atual (0-11)
+      const data = new Date();
+      const mes = meses[data.getMonth()];
+
+      // Insere no span
+      document.getElementById("mesAtual").textContent = mes;
+
+      const telefoneInput = document.getElementById("telefone");
+
+      telefoneInput.addEventListener("input", function (e) {
+        let valor = e.target.value.replace(/\D/g, ""); // Remove tudo que não é número
+
+        if (valor.length > 11) valor = valor.slice(0, 11); // Limita a 11 dígitos
+
+        if (valor.length > 10) {
+          // Formato celular: (99) 99999-9999
+          valor = valor.replace(/^(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
+        } else if (valor.length > 6) {
+          // Formato fixo: (99) 9999-9999
+          valor = valor.replace(/^(\d{2})(\d{4})(\d{0,4})$/, "($1) $2-$3");
+        } else if (valor.length > 2) {
+          // Apenas DDD e parte do número
+          valor = valor.replace(/^(\d{2})(\d{0,5})$/, "($1) $2");
+        } else {
+          valor = valor.replace(/^(\d*)$/, "($1");
+        }
+
+        e.target.value = valor;
+      });

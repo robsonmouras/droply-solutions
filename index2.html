@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="dark scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Transformação Digital com Precisão</title>
-  <meta name="description" content="Diagnóstico estratégico, UX que converte e automações inteligentes para escalar seu negócio." />
-  <!-- Favicon padrão -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Transformação Digital com Precisão</title>
+    <meta
+      name="description"
+      content="Diagnóstico estratégico, UX que converte e automações inteligentes para escalar seu negócio."
+    />
+    <!-- Favicon padrão -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
     <!-- Favicon em PNG (moderno e recomendado) -->
@@ -14,435 +17,883 @@
 
     <!-- Favicon para Apple (iOS) -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <!-- Tailwind via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ["Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", "Helvetica Neue", "Arial", "sans-serif"],
-          },
-          colors: {
-            brand: {
-              purple: '#6C63FF',
-              pink: '#FF3CAC',
-              charcoal: '#2F2F2F',
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: [
+                "Inter",
+                "system-ui",
+                "-apple-system",
+                "Segoe UI",
+                "Roboto",
+                "Ubuntu",
+                "Cantarell",
+                "Noto Sans",
+                "Helvetica Neue",
+                "Arial",
+                "sans-serif",
+              ],
+            },
+            colors: {
+              brand: {
+                purple: "#6C63FF",
+                pink: "#FF3CAC",
+                charcoal: "#2F2F2F",
+              },
+            },
+            backgroundImage: {
+              "gradient-radial":
+                "radial-gradient(50% 50% at 50% 50%, rgba(108,99,255,0.25) 0%, rgba(255,60,172,0.18) 35%, rgba(15,15,20,0.0) 70%)",
+              "grid-dark":
+                "linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-6px)" },
+              },
+              shimmer: {
+                "0%": { backgroundPosition: "-200% 0" },
+                "100%": { backgroundPosition: "200% 0" },
+              },
+              glow: {
+                "0%, 100%": {
+                  boxShadow:
+                    "0 0 0px rgba(108,99,255,0.0), 0 0 0px rgba(255,60,172,0.0)",
+                },
+                "50%": {
+                  boxShadow:
+                    "0 0 40px rgba(108,99,255,0.35), 0 0 60px rgba(255,60,172,0.25)",
+                },
+              },
+              hue: {
+                "0%": { filter: "hue-rotate(0deg)" },
+                "100%": { filter: "hue-rotate(360deg)" },
+              },
+              fadeUp: {
+                "0%": { opacity: 0, transform: "translateY(16px)" },
+                "100%": { opacity: 1, transform: "translateY(0)" },
+              },
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              shimmer: "shimmer 2.2s linear infinite",
+              glow: "glow 4s ease-in-out infinite",
+              hue: "hue 16s linear infinite",
+              fadeUp: "fadeUp 700ms ease-out forwards",
+            },
+            boxShadow: {
+              soft: "0 10px 40px rgba(0,0,0,0.25)",
+            },
+            ringColor: {
+              brand: "#6C63FF",
             },
           },
-          backgroundImage: {
-            'gradient-radial': 'radial-gradient(50% 50% at 50% 50%, rgba(108,99,255,0.25) 0%, rgba(255,60,172,0.18) 35%, rgba(15,15,20,0.0) 70%)',
-            'grid-dark': "linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)",
-          },
-          keyframes: {
-            float: { '0%, 100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-6px)' } },
-            shimmer: { '0%': { backgroundPosition: '-200% 0' }, '100%': { backgroundPosition: '200% 0' } },
-            glow: {
-              '0%, 100%': { boxShadow: '0 0 0px rgba(108,99,255,0.0), 0 0 0px rgba(255,60,172,0.0)' },
-              '50%': { boxShadow: '0 0 40px rgba(108,99,255,0.35), 0 0 60px rgba(255,60,172,0.25)' }
-            },
-            hue: { '0%': { filter: 'hue-rotate(0deg)' }, '100%': { filter: 'hue-rotate(360deg)' } },
-            fadeUp: { '0%': { opacity: 0, transform: 'translateY(16px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
-          },
-          animation: {
-            float: 'float 6s ease-in-out infinite',
-            shimmer: 'shimmer 2.2s linear infinite',
-            glow: 'glow 4s ease-in-out infinite',
-            hue: 'hue 16s linear infinite',
-            fadeUp: 'fadeUp 700ms ease-out forwards',
-          },
-          boxShadow: {
-            'soft': '0 10px 40px rgba(0,0,0,0.25)',
-          },
-          ringColor: {
-            brand: '#6C63FF'
-          },
-        }
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: dark;
       }
-    }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root { color-scheme: dark; }
-    /* helper for reveal */
-    .will-reveal { opacity: 0; transform: translateY(16px); }
-    .revealed { opacity: 1 !important; transform: translateY(0) !important; transition: opacity .7s ease, transform .7s ease; }
-  </style>
-</head>
-<body class="bg-[#0E0E12] text-white font-sans antialiased">
-  <!-- Decorative BG -->
-  <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10">
-    <div class="absolute inset-0 bg-grid-dark bg-[size:34px_34px] opacity-[.06]"></div>
-    <div class="absolute -top-48 left-1/2 -translate-x-1/2 w-[1200px] h-[1200px] bg-gradient-radial blur-3xl"></div>
-  </div>
-
-  <!-- NAVBAR -->
-  <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-[#0E0E12]/60">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex h-16 items-center justify-between">
-        <a href="#" class="group inline-flex items-center gap-2">
-          <img src="img/logo-b.svg" alt="Logo Droply" />
-        </a>
-
-        <nav class="hidden md:flex items-center gap-8 text-sm text-white/70">
-          <a href="#servicos" class="hover:text-white">Serviços</a>
-          <a href="#cases" class="hover:text-white">Cases</a>
-          <a href="#automacoes" class="hover:text-white">Automações</a>
-          <a href="#contato" class="hover:text-white">Contato</a>
-        </nav>
-
-        <a href="#contato" class="hidden sm:inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-brand.pink to-brand.purple px-4 py-2 text-sm font-semibold shadow-soft transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-brand">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15A2.25 2.25 0 012.25 17.25V6.75M21.75 6.75A2.25 2.25 0 0019.5 4.5h-15A2.25 2.25 0 002.25 6.75m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.5a2.25 2.25 0 01-2.36 0l-7.5-4.5A2.25 2.25 0 012.25 6.993V6.75"/></svg>
-          Fale com especialista
-        </a>
-
-        <button id="openMenu" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 p-2 text-white/80">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"/></svg>
-        </button>
-      </div>
+      /* helper for reveal */
+      .will-reveal {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      .revealed {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+    </style>
+  </head>
+  <body class="bg-[#0E0E12] text-white font-sans antialiased">
+    <!-- Decorative BG -->
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10">
+      <div
+        class="absolute inset-0 bg-grid-dark bg-[size:34px_34px] opacity-[.06]"
+      ></div>
+      <div
+        class="absolute -top-48 left-1/2 -translate-x-1/2 w-[1200px] h-[1200px] bg-gradient-radial blur-3xl"
+      ></div>
     </div>
 
-    <!-- Mobile menu -->
-    <div id="mobileMenu" class="md:hidden hidden border-t border-white/10 bg-[#111116]">
-      <nav class="mx-auto max-w-7xl px-4 py-4 flex flex-col gap-3 text-sm text-white/80">
-        <a class="py-2" href="#servicos">Serviços</a>
-        <a class="py-2" href="#cases">Cases</a>
-        <a class="py-2" href="#automacoes">Automações</a>
-        <a class="py-2" href="#contato">Contato</a>
-        <a class="mt-2 inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand.pink to-brand.purple px-4 py-2 font-semibold shadow-soft" href="#contato">Agendar diagnóstico</a>
-      </nav>
-    </div>
-  </header>
+    <!-- NAVBAR -->
+    <header
+      class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-[#0E0E12]/60"
+    >
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <a href="#" class="group inline-flex items-center gap-2">
+            <img src="img/logo-b.svg" alt="Logo Droply" />
+          </a>
 
-  <!-- HERO -->
-  <section class="relative overflow-hidden">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-      <div class="grid items-center gap-12 md:grid-cols-2">
-        <div class="will-reveal">
-          <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
-            <span class="inline-block h-2 w-2 rounded-full bg-brand.pink animate-pulse"></span>
-            Transformação Digital com Precisão
-          </div>
-          <h1 class="mt-4 text-3xl font-extrabold  tracking-tight sm:text-5xl">
-            Como aumentar em <strong>247%</strong> a geração de leads qualificados em 60 dias.</span>
-          </h1>
-          <p class="mt-4 text-white/70 max-w-xl">Sem softwares caros, sem equipes adicionais, sem meses de implementação. Apenas um sistema simples que triplica seu ROI de campanhas — mesmo se já tenha tentado otimizar várias vezes e falhou.</p>
-          <div class="mt-6 flex flex-col sm:flex-row gap-3">
-            <a href="#contato" class="group inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand.pink to-brand.purple px-6 py-3 font-semibold shadow-soft focus:outline-none focus:ring-2 focus:ring-brand">
-              Agendar diagnóstico
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12l-7.5 7.5M21 12H3"/></svg>
-            </a>
-            <a href="#servicos" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-6 py-3 font-medium text-white/80 hover:text-white">
-              Ver serviços
-            </a>
-          </div>
-          <!-- badges -->
-          <div class="mt-8 flex flex-wrap items-center gap-4 text-xs text-white/60">
-            <span class="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-3 py-1">+50 projetos</span>
-            <span class="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-3 py-1">SEO & Performance</span>
-            <span class="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-3 py-1">Agentes N8N</span>
-          </div>
+          <nav class="hidden md:flex items-center gap-8 text-sm text-white/70">
+            <a href="#servicos" class="hover:text-white">Serviços</a>
+            <a href="#cases" class="hover:text-white">Cases</a>
+            <a href="#automacoes" class="hover:text-white">Automações</a>
+            <a href="#contato" class="hover:text-white">Contato</a>
+          </nav>
+
+          <a
+            href="#contato"
+            class="hidden sm:inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-brand-pink to-brand-purple px-4 py-2 text-sm font-semibold shadow-soft transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-brand"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15A2.25 2.25 0 012.25 17.25V6.75M21.75 6.75A2.25 2.25 0 0019.5 4.5h-15A2.25 2.25 0 002.25 6.75m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.5a2.25 2.25 0 01-2.36 0l-7.5-4.5A2.25 2.25 0 012.25 6.993V6.75"
+              />
+            </svg>
+            Fale com especialista
+          </a>
+
+          <button
+            id="openMenu"
+            class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 p-2 text-white/80"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
+              />
+            </svg>
+          </button>
         </div>
+      </div>
 
-        <div class="relative will-reveal">
-          <div class="relative mx-auto w-full max-w-md rounded-3xl border border-white/10 bg-[#14141A] p-5 shadow-soft animate-glow">
-            <div class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-brand.pink/30 to-brand.purple/30 ring-1 ring-inset ring-white/10 grid place-items-center overflow-hidden">
-                <img src="img/hero-illustration.jpg" alt="" style="margin-top: -50px">
-              <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-20 w-20 opacity-80 animate-float" fill="none" stroke="currentColor" stroke-width="1.2">
+      <!-- Mobile menu -->
+      <div
+        id="mobileMenu"
+        class="md:hidden hidden border-t border-white/10 bg-[#111116]"
+      >
+        <nav
+          class="mx-auto max-w-7xl px-4 py-4 flex flex-col gap-3 text-sm text-white/80"
+        >
+          <a class="py-2" href="#servicos">Serviços</a>
+          <a class="py-2" href="#cases">Cases</a>
+          <a class="py-2" href="#automacoes">Automações</a>
+          <a class="py-2" href="#contato">Contato</a>
+          <a
+            class="mt-2 inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand-pink to-brand-purple px-4 py-2 font-semibold shadow-soft"
+            href="#contato"
+            >Agendar diagnóstico</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative overflow-hidden">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+        <div class="grid items-center gap-12 md:grid-cols-2">
+          <div class="will-reveal">
+            <div
+              class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70"
+            >
+              <span
+                class="inline-block h-2 w-2 rounded-full bg-brand-pink animate-pulse"
+              ></span>
+              Transformação Digital com Precisão
+            </div>
+            <h1 class="mt-4 text-3xl font-extrabold tracking-tight sm:text-5xl">
+              Como aumentar em <strong>247%</strong> a geração de leads
+              qualificados em 60 dias.
+            </h1>
+            <p class="mt-4 text-white/70 max-w-xl">
+              Sem softwares caros, sem equipes adicionais, sem meses de
+              implementação. Apenas um sistema simples que triplica seu ROI de
+              campanhas — mesmo se já tenha tentado otimizar várias vezes e
+              falhou.
+            </p>
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+              <a
+                href="#contato"
+                class="group inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand-pink to-brand-purple px-6 py-3 font-semibold shadow-soft focus:outline-none focus:ring-2 focus:ring-brand"
+              >
+                Agendar diagnóstico
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.5 4.5L21 12l-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#servicos"
+                class="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-6 py-3 font-medium text-white/80 hover:text-white"
+              >
+                Ver serviços
+              </a>
+            </div>
+            <!-- badges -->
+            <div
+              class="mt-8 flex flex-wrap items-center gap-4 text-xs text-white/60"
+            >
+              <span
+                class="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-3 py-1"
+                >+50 projetos</span
+              >
+              <span
+                class="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-3 py-1"
+                >SEO & Performance</span
+              >
+              <span
+                class="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-3 py-1"
+                >Agentes N8N</span
+              >
+            </div>
+          </div>
+
+          <div class="relative will-reveal">
+            <div
+              class="relative mx-auto w-full max-w-md rounded-3xl border border-white/10 bg-[#14141A] p-5 shadow-soft animate-glow"
+            >
+              <div
+                class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-brand-pink/30 to-brand-purple/30 ring-1 ring-inset ring-white/10 grid place-items-center overflow-hidden"
+              >
+                <img
+                  src="img/hero-illustration.jpg"
+                  alt=""
+                  style="margin-top: -50px"
+                />
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-20 w-20 opacity-80 animate-float" fill="none" stroke="currentColor" stroke-width="1.2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 7.5h18M3 12h18M3 16.5h18"/>
               </svg>-->
-              <div class="absolute inset-0 opacity-30" style="background: radial-gradient(600px circle at 0% 0%, rgba(255,60,172,.25), transparent 40%), radial-gradient(600px circle at 100% 100%, rgba(108,99,255,.25), transparent 40%)"></div> 
-            </div>
-            <div class="mt-4 grid grid-cols-2 gap-3 text-xs text-white/70">
-              <div class="rounded-xl border border-white/10 bg-white/5 p-3">
-                <p class="font-semibold text-white">+32%</p>
-                <p class="mt-1">Taxa de conversão</p>
+                <div
+                  class="absolute inset-0 opacity-30"
+                  style="
+                    background: radial-gradient(
+                        600px circle at 0% 0%,
+                        rgba(255, 60, 172, 0.25),
+                        transparent 40%
+                      ),
+                      radial-gradient(
+                        600px circle at 100% 100%,
+                        rgba(108, 99, 255, 0.25),
+                        transparent 40%
+                      );
+                  "
+                ></div>
               </div>
-              <div class="rounded-xl border border-white/10 bg-white/5 p-3">
-                <p class="font-semibold text-white">-41%</p>
-                <p class="mt-1">Custo operacional</p>
-              </div>
-              <div class="rounded-xl border border-white/10 bg-white/5 p-3 col-span-2">
-                <p class="font-semibold text-white">Blueprint em 7 dias</p>
-                <div class="mt-2 h-2 w-full overflow-hidden rounded bg-white/10">
-                  <div class="h-full w-2/3 bg-gradient-to-r from-brand.pink to-brand.purple animate-shimmer bg-[length:200%_100%]"></div>
+              <div class="mt-4 grid grid-cols-2 gap-3 text-xs text-white/70">
+                <div class="rounded-xl border border-white/10 bg-white/5 p-3">
+                  <p class="font-semibold text-white">+32%</p>
+                  <p class="mt-1">Taxa de conversão</p>
+                </div>
+                <div class="rounded-xl border border-white/10 bg-white/5 p-3">
+                  <p class="font-semibold text-white">-41%</p>
+                  <p class="mt-1">Custo operacional</p>
+                </div>
+                <div
+                  class="rounded-xl border border-white/10 bg-white/5 p-3 col-span-2"
+                >
+                  <p class="font-semibold text-white">Blueprint em 7 dias</p>
+                  <div
+                    class="mt-2 h-2 w-full overflow-hidden rounded bg-white/10"
+                  >
+                    <div
+                      class="h-full w-2/3 bg-gradient-to-r from-brand-pink to-brand-purple animate-shimmer bg-[length:200%_100%]"
+                    ></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SERVICES -->
-  <section id="servicos" class="py-20 md:py-28 border-t border-white/10 bg-[#0B0B10]">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="will-reveal text-center">
-        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Estratégia, Experiência e Automação</h2>
-        <p class="mt-3 text-white/70">
-            O problema não é o tráfego é a ausência de um funil que converta com precisão cirúrgica.
-Nós implementamos um método proprietário que transforma visitantes casuais em compradores obsessivos em menos de 90 dias. Sem achismos, sem fórmulas genéricas.</p>
-<small> Apenas processos validados para multiplicar seu faturamento.</small>
-      </div>
-
-      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- 1. Estratégia e Domínio Digital -->
-        <article class="will-reveal group rounded-3xl border border-white/10 bg-[#14141A] p-6 transition hover:border-white/20">
-          <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand.pink/30 to-brand.purple/30 ring-1 ring-inset ring-white/10">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-          </div>
-          <h3 class="text-xl font-semibold">Estratégia & Domínio Digital</h3>
-          <ul class="mt-3 space-y-2 text-sm text-white/70">
-            <li><strong>Diagnóstico Estratégico</strong> — Identifica onde o dinheiro está vazando e onde há potencial oculto.</li>
-            <li><strong>Blueprint de Transformação Digital</strong> — Passo a passo para sair do caos e operar com precisão cirúrgica.</li>
-          </ul>
-        </article>
-
-        <!-- 2. Experiência que Converte -->
-        <article class="will-reveal group rounded-3xl border border-white/10 bg-[#14141A] p-6 transition hover:border-white/20">
-          <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand.pink/30 to-brand.purple/30 ring-1 ring-inset ring-white/10">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"/></svg>
-          </div>
-          <h3 class="text-xl font-semibold">Experiência que Converte</h3>
-          <ul class="mt-3 space-y-2 text-sm text-white/70">
-            <li><strong>UX/UI de Alta Conversão</strong> — Interfaces que transformam visitantes em clientes.</li>
-            <li><strong>Identidade Visual Escalável</strong> — Design system consistente e ágil.</li>
-            <li><strong>Protótipos Validadores</strong> — Teste ideias em dias, evitando desperdício.</li>
-          </ul>
-        </article>
-
-        <!-- 3. Construção e Automação -->
-        <article class="will-reveal group rounded-3xl border border-white/10 bg-[#14141A] p-6 transition hover:border-white/20">
-          <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand.pink/30 to-brand.purple/30 ring-1 ring-inset ring-white/10">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75A2.25 2.25 0 0014.25 4.5h-4.5A2.25 2.25 0 007.5 6.75v3.75m9 0h3.75M16.5 10.5h-9m0 0H3.75M6 19.5h12"/></svg>
-          </div>
-          <h3 class="text-xl font-semibold">Construção & Automação</h3>
-          <ul class="mt-3 space-y-2 text-sm text-white/70">
-            <li><strong>Desenvolvimento Web Performance+</strong> — Rápido, responsivo e indexado no Google.</li>
-            <li><strong>Integrações Inteligentes</strong> — APIs e automações que eliminam tarefas manuais.</li>
-          </ul>
-        </article>
-
-        <!-- 4. Otimização Contínua -->
-        <article class="will-reveal group rounded-3xl border border-white/10 bg-[#14141A] p-6 transition hover:border-white/20">
-          <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand.pink/30 to-brand.purple/30 ring-1 ring-inset ring-white/10">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.5l3 3 5.25-5.25m1.5-1.5L21 4.5m0 0v6m0-6h-6"/></svg>
-          </div>
-          <h3 class="text-xl font-semibold">Otimização Contínua</h3>
-          <ul class="mt-3 space-y-2 text-sm text-white/70">
-            <li><strong>Análise de Performance e Comportamento</strong> — Descobre o que o cliente realmente faz.</li>
-            <li><strong>CRO – Conversão Turbinada</strong> — Testes e ajustes que multiplicam vendas.</li>
-            <li><strong>Auditoria Técnica 360°</strong> — Usabilidade, SEO e performance no limite.</li>
-          </ul>
-        </article>
-
-        <!-- 5. Suporte e Escala -->
-        <article class="will-reveal group rounded-3xl border border-white/10 bg-[#14141A] p-6 transition hover:border-white/20">
-          <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand.pink/30 to-brand.purple/30 ring-1 ring-inset ring-white/10">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l3 3"/></svg>
-          </div>
-          <h3 class="text-xl font-semibold">Suporte & Escala</h3>
-          <ul class="mt-3 space-y-2 text-sm text-white/70">
-            <li><strong>Manutenção Evolutiva</strong> — Produto atualizado, seguro e competitivo.</li>
-            <li><strong>Onboarding e Treinamento Premium</strong> — Equipes capacitadas para crescer.</li>
-          </ul>
-        </article>
-
-        <!-- 6. Automações Inteligentes com N8N -->
-        <article class="will-reveal group rounded-3xl border border-white/10 bg-[#14141A] p-6 transition hover:border-white/20">
-          <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand.pink/30 to-brand.purple/30 ring-1 ring-inset ring-white/10">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5A3.75 3.75 0 1010.5 3.75 3.75 3.75 0 006.75 7.5zM13.5 20.25h6M16.5 17.25v6"/></svg>
-          </div>
-          <h3 class="text-xl font-semibold">Automações com Agentes N8N</h3>
-          <ul class="mt-3 space-y-2 text-sm text-white/70">
-            <li><strong>Arquitetura de Fluxos Automatizados</strong> — Agentes conectam sistemas e executam tarefas complexas.</li>
-            <li><strong>Extração e Sincronização de Dados</strong> — Dados em tempo real entre ferramentas.</li>
-            <li><strong>Agentes de Conversão e Relacionamento</strong> — Leads qualificados e follow-ups automáticos.</li>
-            <li><strong>Escala Invisível</strong> — Redução de custos e aumento de produtividade.</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- AUTOMATIONS / N8N HIGHLIGHT -->
-  <section id="automacoes" class="py-20 md:py-28">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-10 md:grid-cols-2 items-center">
-        <div class="will-reveal">
-          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Agentes N8N para Escala Invisível</h2>
-          <p class="mt-3 text-white/70">Automatize triagem de leads, conciliação financeira, rotinas de CRM e integrações entre hubs de dados. Sem código engessado e com total observabilidade.</p>
-          <ul class="mt-6 space-y-3 text-white/80">
-            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-brand.pink"></span> Qualificação automática e roteamento por score.</li>
-            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-brand.purple"></span> Sincronização bi-direcional com ERP/CRM.</li>
-            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-brand.pink"></span> Monitoramento e alertas em tempo real.</li>
-          </ul>
-          <div class="mt-6 flex gap-3">
-            <a href="#contato" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand.pink to-brand.purple px-6 py-3 font-semibold shadow-soft focus:outline-none focus:ring-2 focus:ring-brand">Quero automatizar</a>
-            <a href="#cases" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-6 py-3 font-medium text-white/80">Ver um exemplo</a>
-          </div>
+    <!-- SERVICES -->
+    <section
+      id="servicos"
+      class="py-20 md:py-28 border-t border-white/10 bg-[#0B0B10]"
+    >
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="will-reveal text-center">
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+            Estratégia, Experiência e Automação
+          </h2>
+          <p class="mt-3 text-white/70">
+            O problema não é o tráfego é a ausência de um funil que converta com
+            precisão cirúrgica. Nós implementamos um método proprietário que
+            transforma visitantes casuais em compradores obsessivos em menos de
+            90 dias. Sem achismos, sem fórmulas genéricas.
+          </p>
+          <small>
+            Apenas processos validados para multiplicar seu faturamento.</small
+          >
         </div>
-        <div class="will-reveal">
-          <div class="relative rounded-3xl border border-white/10 bg-[#14141A] p-6 shadow-soft">
-            <div class="grid grid-cols-2 gap-4">
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <p class="text-sm text-white/70">Lead Score</p>
-                <p class="mt-1 text-2xl font-bold">82</p>
-                <div class="mt-3 h-2 rounded bg-white/10 overflow-hidden">
-                  <div class="h-full w-4/5 bg-gradient-to-r from-brand.pink to-brand.purple animate-shimmer bg-[length:200%_100%]"></div>
+
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- 1. Estratégia e Domínio Digital -->
+          <article
+            class="will-reveal group rounded-3xl border border-white/10 bg-[#14141A] p-6 transition hover:border-white/20"
+          >
+            <div
+              class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-pink/30 to-brand-purple/30 ring-1 ring-inset ring-white/10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold">Estratégia & Domínio Digital</h3>
+            <ul class="mt-3 space-y-2 text-sm text-white/70">
+              <li>
+                <strong>Diagnóstico Estratégico</strong> — Identifica onde o
+                dinheiro está vazando e onde há potencial oculto.
+              </li>
+              <li>
+                <strong>Blueprint de Transformação Digital</strong> — Passo a
+                passo para sair do caos e operar com precisão cirúrgica.
+              </li>
+            </ul>
+          </article>
+
+          <!-- 2. Experiência que Converte -->
+          <article
+            class="will-reveal group rounded-3xl border border-white/10 bg-[#14141A] p-6 transition hover:border-white/20"
+          >
+            <div
+              class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-pink/30 to-brand-purple/30 ring-1 ring-inset ring-white/10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold">Experiência que Converte</h3>
+            <ul class="mt-3 space-y-2 text-sm text-white/70">
+              <li>
+                <strong>UX/UI de Alta Conversão</strong> — Interfaces que
+                transformam visitantes em clientes.
+              </li>
+              <li>
+                <strong>Identidade Visual Escalável</strong> — Design system
+                consistente e ágil.
+              </li>
+              <li>
+                <strong>Protótipos Validadores</strong> — Teste ideias em dias,
+                evitando desperdício.
+              </li>
+            </ul>
+          </article>
+
+          <!-- 3. Construção e Automação -->
+          <article
+            class="will-reveal group rounded-3xl border border-white/10 bg-[#14141A] p-6 transition hover:border-white/20"
+          >
+            <div
+              class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-pink/30 to-brand-purple/30 ring-1 ring-inset ring-white/10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M16.5 10.5V6.75A2.25 2.25 0 0014.25 4.5h-4.5A2.25 2.25 0 007.5 6.75v3.75m9 0h3.75M16.5 10.5h-9m0 0H3.75M6 19.5h12"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold">Construção & Automação</h3>
+            <ul class="mt-3 space-y-2 text-sm text-white/70">
+              <li>
+                <strong>Desenvolvimento Web Performance+</strong> — Rápido,
+                responsivo e indexado no Google.
+              </li>
+              <li>
+                <strong>Integrações Inteligentes</strong> — APIs e automações
+                que eliminam tarefas manuais.
+              </li>
+            </ul>
+          </article>
+
+          <!-- 4. Otimização Contínua -->
+          <article
+            class="will-reveal group rounded-3xl border border-white/10 bg-[#14141A] p-6 transition hover:border-white/20"
+          >
+            <div
+              class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-pink/30 to-brand-purple/30 ring-1 ring-inset ring-white/10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 13.5l3 3 5.25-5.25m1.5-1.5L21 4.5m0 0v6m0-6h-6"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold">Otimização Contínua</h3>
+            <ul class="mt-3 space-y-2 text-sm text-white/70">
+              <li>
+                <strong>Análise de Performance e Comportamento</strong> —
+                Descobre o que o cliente realmente faz.
+              </li>
+              <li>
+                <strong>CRO – Conversão Turbinada</strong> — Testes e ajustes
+                que multiplicam vendas.
+              </li>
+              <li>
+                <strong>Auditoria Técnica 360°</strong> — Usabilidade, SEO e
+                performance no limite.
+              </li>
+            </ul>
+          </article>
+
+          <!-- 5. Suporte e Escala -->
+          <article
+            class="will-reveal group rounded-3xl border border-white/10 bg-[#14141A] p-6 transition hover:border-white/20"
+          >
+            <div
+              class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-pink/30 to-brand-purple/30 ring-1 ring-inset ring-white/10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6v6l3 3"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold">Suporte & Escala</h3>
+            <ul class="mt-3 space-y-2 text-sm text-white/70">
+              <li>
+                <strong>Manutenção Evolutiva</strong> — Produto atualizado,
+                seguro e competitivo.
+              </li>
+              <li>
+                <strong>Onboarding e Treinamento Premium</strong> — Equipes
+                capacitadas para crescer.
+              </li>
+            </ul>
+          </article>
+
+          <!-- 6. Automações Inteligentes com N8N -->
+          <article
+            class="will-reveal group rounded-3xl border border-white/10 bg-[#14141A] p-6 transition hover:border-white/20"
+          >
+            <div
+              class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-pink/30 to-brand-purple/30 ring-1 ring-inset ring-white/10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6.75 7.5A3.75 3.75 0 1010.5 3.75 3.75 3.75 0 006.75 7.5zM13.5 20.25h6M16.5 17.25v6"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold">Automações com Agentes N8N</h3>
+            <ul class="mt-3 space-y-2 text-sm text-white/70">
+              <li>
+                <strong>Arquitetura de Fluxos Automatizados</strong> — Agentes
+                conectam sistemas e executam tarefas complexas.
+              </li>
+              <li>
+                <strong>Extração e Sincronização de Dados</strong> — Dados em
+                tempo real entre ferramentas.
+              </li>
+              <li>
+                <strong>Agentes de Conversão e Relacionamento</strong> — Leads
+                qualificados e follow-ups automáticos.
+              </li>
+              <li>
+                <strong>Escala Invisível</strong> — Redução de custos e aumento
+                de produtividade.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTOMATIONS / N8N HIGHLIGHT -->
+    <section id="automacoes" class="py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-10 md:grid-cols-2 items-center">
+          <div class="will-reveal">
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+              Agentes N8N para Escala Invisível
+            </h2>
+            <p class="mt-3 text-white/70">
+              Automatize triagem de leads, conciliação financeira, rotinas de
+              CRM e integrações entre hubs de dados. Sem código engessado e com
+              total observabilidade.
+            </p>
+            <ul class="mt-6 space-y-3 text-white/80">
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-brand-pink"></span>
+                Qualificação automática e roteamento por score.
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-brand-purple"></span>
+                Sincronização bi-direcional com ERP/CRM.
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-brand-pink"></span>
+                Monitoramento e alertas em tempo real.
+              </li>
+            </ul>
+            <div class="mt-6 flex gap-3">
+              <a
+                href="#contato"
+                class="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand-pink to-brand-purple px-6 py-3 font-semibold shadow-soft focus:outline-none focus:ring-2 focus:ring-brand"
+                >Quero automatizar</a
+              >
+              <a
+                href="#cases"
+                class="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-6 py-3 font-medium text-white/80"
+                >Ver um exemplo</a
+              >
+            </div>
+          </div>
+          <div class="will-reveal">
+            <div
+              class="relative rounded-3xl border border-white/10 bg-[#14141A] p-6 shadow-soft"
+            >
+              <div class="grid grid-cols-2 gap-4">
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <p class="text-sm text-white/70">Lead Score</p>
+                  <p class="mt-1 text-2xl font-bold">82</p>
+                  <div class="mt-3 h-2 rounded bg-white/10 overflow-hidden">
+                    <div
+                      class="h-full w-4/5 bg-gradient-to-r from-brand-pink to-brand-purple animate-shimmer bg-[length:200%_100%]"
+                    ></div>
+                  </div>
                 </div>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <p class="text-sm text-white/70">Tempo salvo/mês</p>
-                <p class="mt-1 text-2xl font-bold">54h</p>
-              </div>
-              <div class="col-span-2 rounded-2xl border border-white/10 bg-white/5 p-4">
-                <p class="text-sm text-white/70">Fluxo</p>
-                <div class="mt-2 grid grid-cols-6 gap-2 text-[10px]">
-                  <span class="rounded-full bg-gradient-to-r from-brand.pink/40 to-brand.purple/40 px-2 py-1 text-center">Webhook</span>
-                  <span class="rounded-full bg-white/10 px-2 py-1 text-center">Parser</span>
-                  <span class="rounded-full bg-white/10 px-2 py-1 text-center">Validador</span>
-                  <span class="rounded-full bg-white/10 px-2 py-1 text-center">CRM</span>
-                  <span class="rounded-full bg-white/10 px-2 py-1 text-center">Follow-up</span>
-                  <span class="rounded-full bg-white/10 px-2 py-1 text-center">Relatório</span>
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <p class="text-sm text-white/70">Tempo salvo/mês</p>
+                  <p class="mt-1 text-2xl font-bold">54h</p>
+                </div>
+                <div
+                  class="col-span-2 rounded-2xl border border-white/10 bg-white/5 p-4"
+                >
+                  <p class="text-sm text-white/70">Fluxo</p>
+                  <div class="mt-2 grid grid-cols-6 gap-2 text-[10px]">
+                    <span
+                      class="rounded-full bg-gradient-to-r from-brand-pink/40 to-brand-purple/40 px-2 py-1 text-center"
+                      >Webhook</span
+                    >
+                    <span class="rounded-full bg-white/10 px-2 py-1 text-center"
+                      >Parser</span
+                    >
+                    <span class="rounded-full bg-white/10 px-2 py-1 text-center"
+                      >Validador</span
+                    >
+                    <span class="rounded-full bg-white/10 px-2 py-1 text-center"
+                      >CRM</span
+                    >
+                    <span class="rounded-full bg-white/10 px-2 py-1 text-center"
+                      >Follow-up</span
+                    >
+                    <span class="rounded-full bg-white/10 px-2 py-1 text-center"
+                      >Relatório</span
+                    >
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CASES / SOCIAL PROOF -->
-  <section id="cases" class="py-20 md:py-28 border-t border-white/10 bg-[#0B0B10]">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="will-reveal text-center">
-        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Resultados que falam</h2>
-        <p class="mt-3 text-white/70">Alguns impactos recentes após nosso blueprint e otimizações.</p>
-      </div>
-
-      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="will-reveal rounded-3xl border border-white/10 bg-[#14141A] p-6">
-          <p class="text-sm text-white/70">E-commerce</p>
-          <h3 class="mt-2 text-xl font-semibold">+58% conversão</h3>
-          <p class="mt-2 text-sm text-white/70">Reestruturação de funil, otimização de checkout e automações de recuperação.</p>
-        </div>
-        <div class="will-reveal rounded-3xl border border-white/10 bg-[#14141A] p-6">
-          <p class="text-sm text-white/70">SaaS B2B</p>
-          <h3 class="mt-2 text-xl font-semibold">-35% churn</h3>
-          <p class="mt-2 text-sm text-white/70">Onboarding guiado, métricas de ativação e agentes de relacionamento.</p>
-        </div>
-        <div class="will-reveal rounded-3xl border border-white/10 bg-[#14141A] p-6">
-          <p class="text-sm text-white/70">Educação</p>
-          <h3 class="mt-2 text-xl font-semibold">3x MQLs</h3>
-          <p class="mt-2 text-sm text-white/70">Landing pages testadas A/B e score automático de leads.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA STRIP -->
-  <section class="py-14">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="will-reveal relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-r from-brand.pink/20 to-brand.purple/20 p-8 ring-1 ring-inset ring-white/10">
-        <div class="absolute inset-0 -z-10 opacity-30" style="background: radial-gradient(600px circle at 20% 0%, rgba(255,60,172,.35), transparent 40%), radial-gradient(600px circle at 80% 100%, rgba(108,99,255,.35), transparent 40%)"></div>
-        <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
-          <div>
-            <h3 class="text-2xl font-bold">Garanta sua vaga na implementação deste mês</h3>
-            <p class="mt-1 text-white/70">Estamos abrindo 5 projetos de implementação em <span id="mesAtual"></span>. Depois disso, apenas lista de espera.</p>
-          </div>
-          <a href="#contato" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand.pink to-brand.purple px-6 py-3 font-semibold shadow-soft focus:outline-none focus:ring-2 focus:ring-brand">Solicitar diagnóstico</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contato" class="py-20 md:py-28 border-t border-white/10 bg-[#0B0B10]">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-10 md:grid-cols-2">
-        <div class="will-reveal">
-          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Agende seu diagnóstico</h2>
-          <p class="mt-3 text-white/70">Conte em poucas linhas seus desafios e receba um plano de ação objetivo.</p>
-          <ul class="mt-6 space-y-3 text-white/80">
-            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-brand.pink"></span> Sem compromisso — foco em valor imediato.</li>
-            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-brand.purple"></span> Retorno em até 1 dia útil.</li>
-            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-white/60"></span> Confidencialidade garantida.</li>
-          </ul>
+    <!-- CASES / SOCIAL PROOF -->
+    <section
+      id="cases"
+      class="py-20 md:py-28 border-t border-white/10 bg-[#0B0B10]"
+    >
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="will-reveal text-center">
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+            Resultados que falam
+          </h2>
+          <p class="mt-3 text-white/70">
+            Alguns impactos recentes após nosso blueprint e otimizações.
+          </p>
         </div>
 
-        <form class="will-reveal space-y-4" onsubmit="event.preventDefault(); document.getElementById('formOk').classList.remove('hidden'); this.reset();">
-          <div>
-            <label class="mb-2 block text-sm text-white/80" for="nome">Nome</label>
-            <input id="nome" required type="text" placeholder="Seu nome" class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand" />
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div
+            class="will-reveal rounded-3xl border border-white/10 bg-[#14141A] p-6"
+          >
+            <p class="text-sm text-white/70">E-commerce</p>
+            <h3 class="mt-2 text-xl font-semibold">+58% conversão</h3>
+            <p class="mt-2 text-sm text-white/70">
+              Reestruturação de funil, otimização de checkout e automações de
+              recuperação.
+            </p>
           </div>
-          <div>
-            <label class="mb-2 block text-sm text-white/80" for="email">E-mail</label>
-            <input id="email" required type="email" placeholder="voce@empresa.com" class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand" />
+          <div
+            class="will-reveal rounded-3xl border border-white/10 bg-[#14141A] p-6"
+          >
+            <p class="text-sm text-white/70">SaaS B2B</p>
+            <h3 class="mt-2 text-xl font-semibold">-35% churn</h3>
+            <p class="mt-2 text-sm text-white/70">
+              Onboarding guiado, métricas de ativação e agentes de
+              relacionamento.
+            </p>
           </div>
-          <div>
-            <label class="mb-2 block text-sm text-white/80" for="empresa">Empresa</label>
-            <input id="empresa" type="text" placeholder="Nome da empresa" class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand" />
+          <div
+            class="will-reveal rounded-3xl border border-white/10 bg-[#14141A] p-6"
+          >
+            <p class="text-sm text-white/70">Educação</p>
+            <h3 class="mt-2 text-xl font-semibold">3x MQLs</h3>
+            <p class="mt-2 text-sm text-white/70">
+              Landing pages testadas A/B e score automático de leads.
+            </p>
           </div>
-          <div>
-            <label class="mb-2 block text-sm text-white/80" for="mensagem">Desafio</label>
-            <textarea id="mensagem" rows="4" placeholder="Conte brevemente seus objetivos e o cenário atual." class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"></textarea>
-          </div>
-          <button class="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand.pink to-brand.purple px-6 py-3 font-semibold shadow-soft focus:outline-none focus:ring-2 focus:ring-brand">Enviar</button>
-          <p id="formOk" class="hidden text-sm text-emerald-400">Recebido! Entraremos em contato em breve.</p>
-        </form>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-white/10">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p>© <span id="year"></span> Droply Consultoria — Todos os direitos reservados.</p>
-      <div class="flex items-center gap-4">
-        <a href="#" class="hover:text-white">LinkedIn</a>
-        <a href="#" class="hover:text-white">Política de Privacidade</a>
+    <!-- CTA STRIP -->
+    <section class="py-14">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div
+          class="will-reveal relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-r from-brand-pink/20 to-brand-purple/20 p-8 ring-1 ring-inset ring-white/10"
+        >
+          <div
+            class="absolute inset-0 -z-10 opacity-30"
+            style="
+              background: radial-gradient(
+                  600px circle at 20% 0%,
+                  rgba(255, 60, 172, 0.35),
+                  transparent 40%
+                ),
+                radial-gradient(
+                  600px circle at 80% 100%,
+                  rgba(108, 99, 255, 0.35),
+                  transparent 40%
+                );
+            "
+          ></div>
+          <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+            <div>
+              <h3 class="text-2xl font-bold">
+                Garanta sua vaga na implementação deste mês
+              </h3>
+              <p class="mt-1 text-white/70">
+                Estamos abrindo 5 projetos de implementação em
+                <span id="mesAtual"></span>. Depois disso, apenas lista de
+                espera.
+              </p>
+            </div>
+            <a
+              href="#contato"
+              class="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand-pink to-brand-purple px-6 py-3 font-semibold shadow-soft focus:outline-none focus:ring-2 focus:ring-brand"
+              >Solicitar diagnóstico</a
+            >
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
-  <!-- JS: Mobile menu, year, and reveal on scroll -->
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    <!-- CONTACT -->
+    <section
+      id="contato"
+      class="py-20 md:py-28 border-t border-white/10 bg-[#0B0B10]"
+    >
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-10 md:grid-cols-2">
+          <div class="will-reveal">
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+              Agende seu diagnóstico
+            </h2>
+            <p class="mt-3 text-white/70">
+              Conte em poucas linhas seus desafios e receba um plano de ação
+              objetivo.
+            </p>
+            <ul class="mt-6 space-y-3 text-white/80">
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-brand-pink"></span>
+                Sem compromisso — foco em valor imediato.
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-brand-purple"></span>
+                Retorno em até 1 dia útil.
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-white/60"></span>
+                Confidencialidade garantida.
+              </li>
+            </ul>
+          </div>
 
-    const openBtn = document.getElementById('openMenu');
-    const mobileMenu = document.getElementById('mobileMenu');
-    openBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+          <form
+            class="will-reveal space-y-4"
+            id="form-contato"
+          >
+            <div>
+              <label class="mb-2 block text-sm text-white/80" for="nome"
+                >Nome</label
+              >
+              <input
+                id="nome"
+                required
+                type="text"
+                placeholder="Seu nome"
+                class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"
+              />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm text-white/80" for="email"
+                >E-mail</label
+              >
+              <input
+                id="email"
+                required
+                type="email"
+                placeholder="voce@empresa.com"
+                class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"
+              />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm text-white/80" for="telefone"
+                >Telefone</label
+              >
+              <input
+                id="telefone"
+                type="text"
+                placeholder="Telefone"
+                class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"
+              />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm text-white/80" for="empresa"
+                >Empresa</label
+              >
+              <input
+                id="empresa"
+                type="text"
+                placeholder="Nome da empresa"
+                class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"
+              />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm text-white/80" for="mensagem"
+                >Desafio</label
+              >
+              <textarea
+                id="mensagem"
+                rows="4"
+                placeholder="Conte brevemente seus objetivos e o cenário atual."
+                class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"
+              ></textarea>
+            </div>
+            <button
+              class="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand-pink to-brand-purple px-6 py-3 font-semibold shadow-soft focus:outline-none focus:ring-2 focus:ring-brand"
+            >
+              Enviar
+            </button>
+            <p id="formOk" class="hidden text-sm text-emerald-400">
+              Agora vamos bater um papo pelo nosso whatsapp para entender um pouco melhor.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
 
-    // Reveal on scroll
-    const revealOpts = { threshold: 0.12 };
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed', 'animate-fadeUp');
-          io.unobserve(entry.target);
-        }
-      });
-    }, revealOpts);
-    document.querySelectorAll('.will-reveal').forEach((el) => io.observe(el));
-
-        // Lista com os nomes dos meses
-        const meses = [
-            "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
-            "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
-        ];
-
-        // Pega o mês atual (0-11)
-        const data = new Date();
-        const mes = meses[data.getMonth()];
-
-        // Insere no span
-        document.getElementById("mesAtual").textContent = mes;
-  </script>
-</body>
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10">
+      <div
+        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-4"
+      >
+        <p>
+          © <span id="year"></span> Droply Consultoria — Todos os direitos
+          reservados.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="https://www.linkedin.com/company/droply-solution" target="_blank" class="hover:text-white">LinkedIn</a>
+          <!-- <a href="#" class="hover:text-white">Política de Privacidade</a> -->
+        </div>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+     <script src="js/send-form.js"></script>
+  </body>
 </html>
