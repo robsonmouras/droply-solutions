@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon padrão -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- Favicon em PNG (moderno e recomendado) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+    <!-- Favicon para Apple (iOS) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Manifesto para PWA (opcional) -->
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Tema para navegadores do Windows -->
+
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Droply - Transformando visão digital em realidade</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6366f1",
+              secondary: "#8b5cf6",
+              dark: "#1e293b",
+              "dark-blue": "#334155",
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="font-sans smooth-scroll">
+    <!-- Header -->
+    <header
+      class="bg-white/95 backdrop-blur-sm fixed w-full top-0 z-50 border-b border-gray-100"
+    >
+      <nav class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center space-x-2">
+            <a href="/">
+              <img src="img/logo.svg" alt="Logo Droply" />
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#home"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Home</a
+            >
+            <a
+              href="#servicos"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Serviços</a
+            >
+            <a
+              href="#sobre"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Sobre</a
+            >
+            <a
+              href="#contato"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Contato</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+            <i class="ri-menu-line text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+          <div class="flex flex-col space-y-4">
+            <a
+              href="#home"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Home</a
+            >
+            <a
+              href="#servicos"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Serviços</a
+            >
+            <a
+              href="#sobre"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Sobre</a
+            >
+            <a
+              href="#contato"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Contato</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center justify-between">
+          <!-- Left Content -->
+          <div class="lg:w-1/2 mb-12 lg:mb-0">
+            <h1
+              class="scroll-animate fade-in text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+            >
+              Transformamos
+              <span class="gradient-text">sua visão digital</span> em realidade
+            </h1>
+            <p
+              class="scroll-animate fade-in stagger-1 text-lg text-gray-600 mb-8 leading-relaxed"
+            >
+              Consultoria especializada em tecnologia para PMEs. Desenvolvemos
+              soluções digitais modernas. Otimizamos sistemas legados e criamos
+              experiências excepcionais para seus usuários.
+            </p>
+            <div
+              class="scroll-animate fade-in stagger-2 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
+            >
+              <a
+                href="#contato"
+                class="gradient-bg text-white px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+              >
+                Fale com um especialista
+              </a>
+              <a
+                href="#servicos"
+                class="border-2 border-primary text-primary px-8 py-4 rounded-lg font-semibold hover:bg-primary hover:text-white transition-all"
+              >
+                Ver nossos serviços
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Illustration -->
+          <div class="lg:w-1/2 flex justify-center">
+            <div class="scroll-animate slide-left relative">
+              <div class="w-80 h-64 gradient-bg rounded-2xl p-8 shadow-2xl">
+                <div class="bg-white rounded-lg p-6 h-full">
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="flex space-x-2">
+                      <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                      <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                      <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                    </div>
+                  </div>
+                  <div class="space-y-3">
+                    <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+                    <div class="h-4 bg-primary rounded w-1/2"></div>
+                    <div class="h-4 bg-gray-200 rounded w-2/3"></div>
+                    <div
+                      class="h-8 bg-gradient-to-r from-primary to-secondary rounded mt-6"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2
+            class="scroll-animate fade-in text-4xl font-bold text-gray-900 mb-4"
+          >
+            Nossos Serviços
+          </h2>
+          <p
+            class="scroll-animate fade-in stagger-1 text-lg text-gray-600 max-w-2xl mx-auto"
+          >
+            Oferecemos soluções completas em tecnologia para impulsionar o
+            crescimento da sua empresa
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Service 1: Design UX/UI -->
+          <div
+            class="scroll-animate fade-in stagger-1 card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-lg"
+          >
+            <div
+              class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="ri-palette-line text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Design UX/UI</h3>
+            <p class="text-gray-600 mb-6">
+              Criamos interfaces modernas e intuitivas, focadas na experiência
+              do usuário e conversão de leads eficaz.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-center text-gray-600">
+                <i class="ri-check-line text-green-500 mr-2"></i>
+                Pesquisas de usuário
+              </li>
+              <li class="flex items-center text-gray-600">
+                <i class="ri-check-line text-green-500 mr-2"></i>
+                Prototipagem interativa
+              </li>
+              <li class="flex items-center text-gray-600">
+                <i class="ri-check-line text-green-500 mr-2"></i>
+                Design system
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service 2: Desenvolvimento -->
+          <div
+            class="scroll-animate fade-in stagger-2 card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-lg"
+          >
+            <div
+              class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="ri-code-line text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Desenvolvimento
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Desenvolvemos sites e produtos digitais robustos, escaláveis e
+              otimizados para performance.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-center text-gray-600">
+                <i class="ri-check-line text-green-500 mr-2"></i>
+                Frontend moderno
+              </li>
+              <li class="flex items-center text-gray-600">
+                <i class="ri-check-line text-green-500 mr-2"></i>
+                Backend escalável
+              </li>
+              <li class="flex items-center text-gray-600">
+                <i class="ri-check-line text-green-500 mr-2"></i>
+                APIs integradas
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service 3: Manutenção & Upgrade -->
+          <div
+            class="scroll-animate fade-in stagger-3 card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-lg"
+          >
+            <div
+              class="w-16 h-16 bg-gray-800 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="ri-tools-line text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Manutenção & Upgrade
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Modernizamos sistemas legados e adicionamos novas funcionalidades
+              para manter sua empresa competitiva.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-center text-gray-600">
+                <i class="ri-check-line text-green-500 mr-2"></i>
+                Análise de sistemas
+              </li>
+              <li class="flex items-center text-gray-600">
+                <i class="ri-check-line text-green-500 mr-2"></i>
+                Refatoração de código
+              </li>
+              <li class="flex items-center text-gray-600">
+                <i class="ri-check-line text-green-500 mr-2"></i>
+                Novas funcionalidades
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <!-- Left Content -->
+          <div>
+            <h2
+              class="scroll-animate slide-right text-4xl font-bold text-gray-900 mb-6"
+            >
+              Sobre a Droply
+            </h2>
+            <p
+              class="scroll-animate slide-right stagger-1 text-lg text-gray-600 mb-8 leading-relaxed"
+            >
+              Somos uma consultoria especializada em transformação digital para
+              pequenas e médias empresas. Nossa missão é democratizar o acesso à
+              tecnologia de ponta.
+            </p>
+
+            <div class="space-y-6">
+              <div
+                class="scroll-animate slide-right stagger-2 flex items-start space-x-4"
+              >
+                <div
+                  class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="ri-lightbulb-line text-white text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                    Inovação Constante
+                  </h3>
+                  <p class="text-gray-600">
+                    Utilizamos as mais recentes tecnologias e metodologias para
+                    entregar soluções de ponta.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="scroll-animate slide-right stagger-3 flex items-start space-x-4"
+              >
+                <div
+                  class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="ri-user-heart-line text-white text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                    Foco no Cliente
+                  </h3>
+                  <p class="text-gray-600">
+                    Cada projeto é desenvolvido pensando nas necessidades
+                    específicas do seu negócio.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Stats -->
+          <div class="grid grid-cols-2 gap-6">
+            <div
+              class="scroll-animate scale-up stagger-1 gradient-bg p-8 rounded-2xl text-white text-center"
+            >
+              <div class="text-4xl font-bold mb-2">50+</div>
+              <div class="text-white/80">Projetos Entregues</div>
+            </div>
+            <div
+              class="scroll-animate scale-up stagger-2 gradient-bg p-8 rounded-2xl text-white text-center"
+            >
+              <div class="text-4xl font-bold mb-2">98%</div>
+              <div class="text-white/80">Satisfação</div>
+            </div>
+            <div
+              class="scroll-animate scale-up stagger-3 gradient-bg p-8 rounded-2xl text-white text-center"
+            >
+              <div class="text-4xl font-bold mb-2">5+</div>
+              <div class="text-white/80">Anos Experiência</div>
+            </div>
+            <div
+              class="scroll-animate scale-up stagger-4 gradient-bg p-8 rounded-2xl text-white text-center"
+            >
+              <div class="text-4xl font-bold mb-2">24h</div>
+              <div class="text-white/80">Suporte</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2
+            class="scroll-animate fade-in text-4xl font-bold text-gray-900 mb-4"
+          >
+            O que nossos clientes dizem
+          </h2>
+          <p class="scroll-animate fade-in stagger-1 text-lg text-gray-600">
+            Depoimentos reais de empresas que transformaram seus negócios
+            conosco
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div
+            class="scroll-animate slide-up stagger-1 bg-white p-8 rounded-2xl border border-gray-100 shadow-lg"
+          >
+            <div class="flex items-center mb-6">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face&auto=format"
+                alt="Carlos Silva"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-semibold text-gray-900">Carlos Silva</h4>
+                <p class="text-gray-600 text-sm">CEO, TechCorp</p>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "A Droply transformou completamente nossa presença digital. O novo
+              site aumentou nossas conversões em 200%."
+            </p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div
+            class="scroll-animate slide-up stagger-2 bg-white p-8 rounded-2xl border border-gray-100 shadow-lg"
+          >
+            <div class="flex items-center mb-6">
+              <img
+                src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=60&h=60&fit=crop&crop=face&auto=format"
+                alt="Ana Costa"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-semibold text-gray-900">Ana Costa</h4>
+                <p class="text-gray-600 text-sm">Diretora, Inovação</p>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "Profissionais excepcionais! Modernizaram nosso sistema legado sem
+              interromper nossas operações."
+            </p>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div
+            class="scroll-animate slide-up stagger-3 bg-white p-8 rounded-2xl border border-gray-100 shadow-lg"
+          >
+            <div class="flex items-center mb-6">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face&auto=format"
+                alt="Roberto Lima"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-semibold text-gray-900">Roberto Lima</h4>
+                <p class="text-gray-600 text-sm">Fundador, StartupX</p>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "Parceria incrível! O design UX/UI superou todas nossas
+              expectativas e melhorou a experiência dos usuários."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-20 bg-dark text-white">
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16">
+          <!-- Left Content -->
+          <div>
+            <h2 class="scroll-animate slide-right text-4xl font-bold mb-6">
+              Vamos conversar sobre seu projeto
+            </h2>
+            <p
+              class="scroll-animate slide-right stagger-1 text-gray-300 mb-8 text-lg"
+            >
+              Entre em contato conosco e descubra como podemos transformar sua
+              visão em realidade digital.
+            </p>
+
+            <div class="space-y-6">
+              <div
+                class="scroll-animate slide-right stagger-2 flex items-center space-x-4"
+              >
+                <div
+                  class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center"
+                >
+                  <i class="ri-phone-line text-white text-xl"></i>
+                </div>
+                <div>
+                  <p class="text-gray-300">Telefone</p>
+                  <p class="text-white font-semibold">+55 (41) 98879-4473</p>
+                </div>
+              </div>
+
+              <div
+                class="scroll-animate slide-right stagger-3 flex items-center space-x-4"
+              >
+                <div
+                  class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center"
+                >
+                  <i class="ri-mail-line text-white text-xl"></i>
+                </div>
+                <div>
+                  <p class="text-gray-300">Email</p>
+                  <p class="text-white font-semibold">
+                    contato@droply.solution
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Redes sociais -->
+            <!-- <div
+              class="scroll-animate slide-right stagger-4 flex space-x-4 mt-8"
+            >
+              <a
+                href="#"
+                class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center hover:opacity-80 transition-opacity"
+              >
+                <i class="ri-linkedin-line text-white text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center hover:opacity-80 transition-opacity"
+              >
+                <i class="ri-instagram-line text-white text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center hover:opacity-80 transition-opacity"
+              >
+                <i class="ri-twitter-line text-white text-xl"></i>
+              </a>
+            </div> -->
+          </div>
+
+          <!-- Right Form -->
+          <div
+            class="scroll-animate slide-left bg-white rounded-2xl p-8 text-dark"
+          >
+            <form id="contact-form" class="space-y-6">
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Nome"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                  />
+                </div>
+              </div>
+              <div>
+                <input
+                  type="text"
+                  id="empresa"
+                  name="empresa"
+                  placeholder="Empresa"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                />
+              </div>
+              <div>
+                <textarea
+                  id="mensagem"
+                  name="mensagem"
+                  rows="5"
+                  placeholder="Mensagem"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full gradient-bg text-white py-4 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+              >
+                Enviar mensagem
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-blue text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="text-center">
+          <div class="flex items-center justify-center space-x-2 mb-4">
+            <a href="/">
+              <img src="img/logo-b.svg" alt="Logo Droply" />
+            </a>
+          </div>
+          <p class="text-gray-400 mb-4">
+            Transformando negócios através da tecnologia
+          </p>
+          <p class="text-gray-500 text-sm">
+            © 2024 Droply. Todos os direitos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
