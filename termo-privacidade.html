@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Política de Privacidade • Droply Solutions</title>
+    <meta
+      name="description"
+      content="Política de Privacidade da Droply Solutions: dados coletados, finalidades, cookies, direitos do titular e contato."
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Tailwind config inline para cores da identidade
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                purple: "#6C63FF",
+                pink: "#FF3CAC",
+                dark: "#2F2F2F",
+              },
+            },
+            boxShadow: {
+              glow: "0 0 0 2px rgba(255, 60, 172, 0.25), 0 10px 25px rgba(108,99,255,0.35)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Favicon (opcional) -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <style>
+      /* Scrollbar sutil no modo dark */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #3f3f46;
+        border-radius: 999px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0b0b0c;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-zinc-950 text-zinc-100 selection:bg-brand.pink/30 selection:text-white"
+  >
+    <!-- Header / Navbar -->
+    <header
+      class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-zinc-950/70 border-b border-white/5"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between"
+      >
+        <a href="/" class="group inline-flex items-center gap-2">
+          <img src="img/logo-b.svg" alt="Logo Droply" />
+        </a>
+        <nav class="hidden md:flex items-center gap-6">
+          <a
+            href="#politica"
+            class="text-sm text-zinc-300 hover:text-white transition"
+            >Política</a
+          >
+          <a
+            href="#cookies"
+            class="text-sm text-zinc-300 hover:text-white transition"
+            >Cookies</a
+          >
+          <a
+            href="#direitos"
+            class="text-sm text-zinc-300 hover:text-white transition"
+            >Seus direitos</a
+          >
+          <a
+            href="#contato"
+            class="text-sm text-zinc-300 hover:text-white transition"
+            >Contato</a
+          >
+        </nav>
+        <button
+          id="themeToggle"
+          aria-label="Alternar tema"
+          class="md:ml-6 rounded-xl px-3 py-2 text-sm bg-white/5 hover:bg-white/10 transition border border-white/10"
+        >
+          🌙/☀️
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <div
+        class="absolute inset-0 -z-10 opacity-30 blur-3xl pointer-events-none"
+        aria-hidden="true"
+      >
+        <div
+          class="absolute -top-24 -left-24 size-[36rem] bg-gradient-to-br from-brand.pink to-brand.purple rounded-full mix-blend-screen"
+        ></div>
+        <div
+          class="absolute -bottom-20 -right-20 size-[28rem] bg-gradient-to-tr from-brand.purple to-brand.pink rounded-full mix-blend-screen"
+        ></div>
+      </div>
+      <div class="max-w-4xl mx-auto px-4 py-16 md:py-24 text-center">
+        <span
+          class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-zinc-400"
+        >
+          <span class="size-1.5 rounded-full bg-brand.pink"></span>
+          Transparência e segurança
+        </span>
+        <h1 class="mt-4 text-3xl md:text-5xl font-semibold leading-tight">
+          Política de Privacidade da
+          <span
+            class="bg-gradient-to-r from-brand.pink to-brand.purple bg-clip-text text-transparent"
+            >Droply Solutions</span
+          >
+        </h1>
+        <p class="mt-4 text-zinc-300 md:text-lg">
+          Como coletamos, utilizamos, armazenamos e protegemos seus dados ao
+          navegar em <strong>droply.solutions</strong> e utilizar nossos
+          serviços.
+        </p>
+        <div class="mt-6 text-sm text-zinc-400">
+          Última atualização: <time id="lastUpdated">15/08/2025</time>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conteúdo principal -->
+    <main id="politica" class="max-w-5xl mx-auto px-4 pb-24">
+      <!-- Cartão principal -->
+      <article
+        class="rounded-2xl border border-white/10 bg-white/[0.02] shadow-xl shadow-black/20"
+      >
+        <div class="p-6 md:p-10">
+          <h2 class="text-2xl md:text-3xl font-semibold">1. Introdução</h2>
+          <p class="mt-3 text-zinc-300 leading-relaxed">
+            Na Droply Solutions (“<em>nós</em>”, “<em>nosso</em>” ou
+            “<em>nos</em>”), valorizamos sua privacidade e estamos comprometidos
+            em proteger seus dados pessoais. Esta Política descreve como
+            tratamos informações quando você visita nosso site
+            <span class="font-mono">https://www.droply.solutions</span>
+            (“<em>Site</em>”) ou interage com nossos serviços.
+          </p>
+
+          <h3 class="mt-8 text-xl md:text-2xl font-semibold">
+            2. Dados que coletamos
+          </h3>
+          <ul class="mt-3 space-y-2 text-zinc-300 list-disc pl-5">
+            <li>
+              <strong>Informações de contato</strong>: nome, e-mail, telefone e
+              empresa, quando você envia formulários.
+            </li>
+            <li>
+              <strong>Dados técnicos</strong>: IP, tipo/versão do navegador,
+              dispositivo, sistema operacional, páginas de referência e carimbos
+              de data/hora.
+            </li>
+            <li>
+              <strong>Dados de uso</strong>: páginas visitadas, tempo de
+              permanência, cliques e eventos de conversão.
+            </li>
+            <li>
+              <strong>Cookies e tecnologias semelhantes</strong>: para
+              funcionalidades, estatísticas e personalização.
+            </li>
+          </ul>
+
+          <h3 class="mt-8 text-xl md:text-2xl font-semibold">
+            3. Bases legais e finalidades
+          </h3>
+          <div class="mt-3 grid md:grid-cols-2 gap-4">
+            <div class="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+              <h4 class="font-medium">Bases legais (LGPD/GDPR)</h4>
+              <ul class="mt-2 list-disc pl-5 text-zinc-300 space-y-1">
+                <li>Execução de contrato e procedimentos preliminares.</li>
+                <li>Legítimo interesse (melhoria de serviços e segurança).</li>
+                <li>Consentimento (comunicações de marketing).</li>
+                <li>Cumprimento de obrigação legal/regulatória.</li>
+              </ul>
+            </div>
+            <div class="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+              <h4 class="font-medium">Finalidades</h4>
+              <ul class="mt-2 list-disc pl-5 text-zinc-300 space-y-1">
+                <li>Prestar e aprimorar serviços e recursos do Site.</li>
+                <li>Responder contatos, solicitações e diagnósticos.</li>
+                <li>Mensurar performance, UX e funis de conversão.</li>
+                <li>Cumprir exigências legais e proteger direitos.</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 id="cookies" class="mt-8 text-xl md:text-2xl font-semibold">
+            4. Cookies e preferências
+          </h3>
+          <p class="mt-3 text-zinc-300">
+            Utilizamos cookies para funcionalidades essenciais, estatísticas e
+            personalização. Você pode gerenciar preferências abaixo:
+          </p>
+
+          <!-- Preferências de cookies (simples) -->
+          <div class="mt-4 grid gap-3 md:grid-cols-3">
+            <label
+              class="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] p-4"
+            >
+              <input
+                type="checkbox"
+                id="ck-essential"
+                checked
+                disabled
+                class="accent-brand.pink"
+              />
+              <span class="text-sm">Essenciais (sempre ativos)</span>
+            </label>
+            <label
+              class="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] p-4"
+            >
+              <input
+                type="checkbox"
+                id="ck-analytics"
+                class="accent-brand.pink"
+              />
+              <span class="text-sm">Estatísticos/Analytics</span>
+            </label>
+            <label
+              class="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] p-4"
+            >
+              <input
+                type="checkbox"
+                id="ck-marketing"
+                class="accent-brand.pink"
+              />
+              <span class="text-sm">Marketing</span>
+            </label>
+          </div>
+          <div class="mt-3 flex flex-wrap items-center gap-3">
+            <button
+              id="saveCookies"
+              class="rounded-xl px-4 py-2 bg-gradient-to-r from-brand.pink to-brand.purple border border-white/10 hover:shadow-glow transition"
+            >
+              Salvar preferências
+            </button>
+            <button
+              id="clearCookies"
+              class="rounded-xl px-4 py-2 bg-white/5 border border-white/10 hover:bg-white/10 transition"
+            >
+              Limpar preferências
+            </button>
+            <span id="cookieStatus" class="text-sm text-zinc-400"></span>
+          </div>
+
+          <h3 class="mt-8 text-xl md:text-2xl font-semibold">
+            5. Compartilhamento de dados
+          </h3>
+          <p class="mt-3 text-zinc-300">
+            Não vendemos seus dados. Podemos compartilhar com provedores que
+            operam em nosso nome (por exemplo, hospedagem, CRM, analytics) e com
+            autoridades, quando exigido por lei.
+          </p>
+
+          <h3 class="mt-8 text-xl md:text-2xl font-semibold">
+            6. Retenção e segurança
+          </h3>
+          <p class="mt-3 text-zinc-300">
+            Reteremos os dados pelo tempo necessário às finalidades declaradas e
+            exigências legais. Aplicamos medidas técnicas e organizacionais
+            razoáveis (criptografia em trânsito, controles de acesso). Nenhum
+            sistema é 100% seguro; notificaremos incidentes conforme a lei
+            aplicável.
+          </p>
+
+          <h3 id="direitos" class="mt-8 text-xl md:text-2xl font-semibold">
+            7. Direitos do titular
+          </h3>
+          <div class="mt-3 text-zinc-300 space-y-2">
+            <p>
+              Você pode solicitar: (i) confirmação de tratamento, (ii) acesso,
+              (iii) correção, (iv) anonimização/exclusão, (v) portabilidade,
+              (vi) informação sobre compartilhamentos, (vii) revogação do
+              consentimento e (viii) oposição quando cabível.
+            </p>
+            <p>
+              Para exercer direitos, use os canais em
+              <a
+                href="#contato"
+                class="underline decoration-brand.pink/70 hover:text-white"
+                >Contato</a
+              >.
+            </p>
+          </div>
+
+          <h3 class="mt-8 text-xl md:text-2xl font-semibold">
+            8. Links externos
+          </h3>
+          <p class="mt-3 text-zinc-300">
+            O Site pode conter links para terceiros. Não nos responsabilizamos
+            por suas práticas; recomendamos consultar as políticas de
+            privacidade correspondentes.
+          </p>
+
+          <h3 class="mt-8 text-xl md:text-2xl font-semibold">
+            9. Alterações nesta política
+          </h3>
+          <p class="mt-3 text-zinc-300">
+            Podemos atualizar esta Política periodicamente. Alterações materiais
+            serão comunicadas neste Site. Verifique a data de atualização no
+            topo desta página.
+          </p>
+
+          <h3 id="contato" class="mt-8 text-xl md:text-2xl font-semibold">
+            10. Contato do Encarregado/DPO
+          </h3>
+          <div class="mt-3 grid gap-4 md:grid-cols-2">
+            <div class="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+              <p class="text-zinc-300">
+                E-mail:
+                <button
+                  id="copyEmail"
+                  class="underline decoration-brand.pink/70 hover:text-white"
+                >
+                  privacidade@droply.solutions
+                </button>
+              </p>
+              <p class="text-zinc-300">
+                Assunto: “Solicitação LGPD – Droply Solutions”.
+              </p>
+              <p class="text-zinc-400 text-sm mt-2">
+                Ao enviar um pedido, descreva claramente seu direito e forneça
+                meios de verificação de identidade.
+              </p>
+            </div>
+            <div class="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+              <p class="text-zinc-300">
+                Endereço comercial (se aplicável): Goiânia – GO, Brasil.
+              </p>
+              <p class="text-zinc-400 text-sm">
+                Atualize este campo se necessário.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- FAQ/Accordion opcional -->
+      <section class="mt-10">
+        <h3 class="text-xl md:text-2xl font-semibold">Perguntas frequentes</h3>
+        <div
+          class="mt-4 divide-y divide-white/10 border border-white/10 rounded-2xl overflow-hidden"
+        >
+          <!-- Item 1 -->
+          <details class="group bg-white/[0.02] open:bg-white/[0.03]">
+            <summary
+              class="flex cursor-pointer items-center justify-between p-4 text-left"
+            >
+              <span class="font-medium">Quais cookies a Droply utiliza?</span>
+              <span class="transition group-open:rotate-180">⌄</span>
+            </summary>
+            <div class="px-4 pb-4 text-zinc-300 text-sm">
+              Usamos cookies essenciais, de medição de audiência (analytics) e,
+              quando consentido, de marketing para remarketing/ADS. Preferências
+              podem ser gerenciadas acima.
+            </div>
+          </details>
+          <!-- Item 2 -->
+          <details class="group bg-white/[0.02] open:bg-white/[0.03]">
+            <summary
+              class="flex cursor-pointer items-center justify-between p-4 text-left"
+            >
+              <span class="font-medium"
+                >Como posso revogar consentimentos?</span
+              >
+              <span class="transition group-open:rotate-180">⌄</span>
+            </summary>
+            <div class="px-4 pb-4 text-zinc-300 text-sm">
+              Ajuste as preferências nesta página e/ou entre em contato pelo
+              e-mail do DPO indicando a revogação desejada.
+            </div>
+          </details>
+          <!-- Item 3 -->
+          <details class="group bg-white/[0.02] open:bg-white/[0.03]">
+            <summary
+              class="flex cursor-pointer items-center justify-between p-4 text-left"
+            >
+              <span class="font-medium"
+                >A Droply compartilha dados com terceiros?</span
+              >
+              <span class="transition group-open:rotate-180">⌄</span>
+            </summary>
+            <div class="px-4 pb-4 text-zinc-300 text-sm">
+              Compartilhamos apenas com provedores necessários para operar o
+              Site/serviços, sob contratos que exigem confidencialidade e
+              proteção de dados.
+            </div>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <!-- Cookie banner simples -->
+    <div
+      id="cookieBanner"
+      class="fixed inset-x-0 bottom-3 z-50 mx-auto max-w-4xl rounded-2xl border border-white/10 bg-zinc-900/90 backdrop-blur px-4 py-4 shadow-xl shadow-black/30 hidden"
+    >
+      <div class="flex flex-col md:flex-row md:items-center gap-3">
+        <p class="text-sm text-zinc-300">
+          Usamos cookies para melhorar sua experiência. Gerencie suas
+          preferências ou aceite todos.
+        </p>
+        <div class="flex items-center gap-2 md:ml-auto">
+          <button
+            id="openPrefs"
+            class="rounded-xl px-3 py-2 bg-white/5 border border-white/10 hover:bg-white/10 text-sm"
+          >
+            Preferências
+          </button>
+          <button
+            id="acceptAll"
+            class="rounded-xl px-3 py-2 bg-gradient-to-r from-brand.pink to-brand.purple text-sm border border-white/10 hover:shadow-glow"
+          >
+            Aceitar todos
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5">
+      <div class="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-2 gap-6">
+        <p class="text-zinc-400 text-sm">
+          © <span id="year"></span> Droply Solutions. Todos os direitos
+          reservados.
+        </p>
+        <div class="flex md:justify-end gap-4 text-sm">
+          <a href="#politica" class="text-zinc-400 hover:text-white"
+            >Política</a
+          >
+          <a href="#cookies" class="text-zinc-400 hover:text-white">Cookies</a>
+          <a href="#direitos" class="text-zinc-400 hover:text-white"
+            >Seus direitos</a
+          >
+          <a href="#contato" class="text-zinc-400 hover:text-white">Contato</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button
+      id="toTop"
+      class="fixed bottom-6 right-6 hidden items-center justify-center rounded-full size-11 bg-white/10 backdrop-blur border border-white/10 hover:bg-white/20 transition"
+      aria-label="Voltar ao topo"
+    >
+      ↑
+    </button>
+
+    <script src="js/termo-privacidade.js"></script>
+  </body>
+</html>
