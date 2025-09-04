@@ -612,7 +612,107 @@
         </div>
       </div>
     </section>
-
+    <!-- CONTACT -->
+    <section
+      id="contato"
+      class="py-20 md:py-28 border-t border-white/10 bg-[#0B0B10]"
+    >
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-10 md:grid-cols-2">
+          <div class="will-reveal">
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+              Agende seu diagnóstico
+            </h2>
+            <p class="mt-3 text-white/70">
+              Conte em poucas linhas seus desafios e receba um plano de ação
+              objetivo.
+            </p>
+            <ul class="mt-6 space-y-3 text-white/80">
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-brand-pink"></span>
+                Sem compromisso — foco em valor imediato.
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-brand-purple"></span>
+                Retorno em até 1 dia útil.
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-white/60"></span>
+                Confidencialidade garantida.
+              </li>
+            </ul>
+          </div>
+          <form class="will-reveal space-y-4" id="form-contato">
+            <div>
+              <label class="mb-2 block text-sm text-white/80" for="nome"
+                >Nome</label
+              >
+              <input
+                id="nome"
+                required
+                type="text"
+                placeholder="Seu nome"
+                class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"
+              />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm text-white/80" for="email"
+                >E-mail</label
+              >
+              <input
+                id="email"
+                required
+                type="email"
+                placeholder="voce@empresa.com"
+                class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"
+              />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm text-white/80" for="telefone"
+                >Telefone</label
+              >
+              <input
+                id="telefone"
+                type="text"
+                placeholder="Telefone"
+                class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"
+              />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm text-white/80" for="empresa"
+                >Empresa</label
+              >
+              <input
+                id="empresa"
+                type="text"
+                placeholder="Nome da empresa"
+                class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"
+              />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm text-white/80" for="mensagem"
+                >Desafio</label
+              >
+              <textarea
+                id="mensagem"
+                rows="4"
+                placeholder="Conte brevemente seus objetivos e o cenário atual."
+                class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"
+              ></textarea>
+            </div>
+            <button
+              class="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand-pink to-brand-purple px-6 py-3 font-semibold shadow-soft focus:outline-none focus:ring-2 focus:ring-brand"
+            >
+              Enviar
+            </button>
+            <p id="formOk" class="hidden text-sm text-emerald-400">
+              Agora vamos bater um papo pelo nosso whatsapp para entender um
+              pouco melhor.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
     <!-- AUTOMATIONS / N8N HIGHLIGHT -->
     <section id="automacoes" class="py-20 md:py-28">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -794,110 +894,6 @@
         </div>
       </div>
     </section>
-
-    <!-- CONTACT -->
-    <section
-      id="contato"
-      class="py-20 md:py-28 border-t border-white/10 bg-[#0B0B10]"
-    >
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid gap-10 md:grid-cols-2">
-          <div class="will-reveal">
-            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-              Agende seu diagnóstico
-            </h2>
-            <p class="mt-3 text-white/70">
-              Conte em poucas linhas seus desafios e receba um plano de ação
-              objetivo.
-            </p>
-            <ul class="mt-6 space-y-3 text-white/80">
-              <li class="flex items-start gap-3">
-                <span class="mt-1 h-2 w-2 rounded-full bg-brand-pink"></span>
-                Sem compromisso — foco em valor imediato.
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-1 h-2 w-2 rounded-full bg-brand-purple"></span>
-                Retorno em até 1 dia útil.
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-1 h-2 w-2 rounded-full bg-white/60"></span>
-                Confidencialidade garantida.
-              </li>
-            </ul>
-          </div>
-
-          <form class="will-reveal space-y-4" id="form-contato">
-            <div>
-              <label class="mb-2 block text-sm text-white/80" for="nome"
-                >Nome</label
-              >
-              <input
-                id="nome"
-                required
-                type="text"
-                placeholder="Seu nome"
-                class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"
-              />
-            </div>
-            <div>
-              <label class="mb-2 block text-sm text-white/80" for="email"
-                >E-mail</label
-              >
-              <input
-                id="email"
-                required
-                type="email"
-                placeholder="voce@empresa.com"
-                class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"
-              />
-            </div>
-            <div>
-              <label class="mb-2 block text-sm text-white/80" for="telefone"
-                >Telefone</label
-              >
-              <input
-                id="telefone"
-                type="text"
-                placeholder="Telefone"
-                class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"
-              />
-            </div>
-            <div>
-              <label class="mb-2 block text-sm text-white/80" for="empresa"
-                >Empresa</label
-              >
-              <input
-                id="empresa"
-                type="text"
-                placeholder="Nome da empresa"
-                class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"
-              />
-            </div>
-            <div>
-              <label class="mb-2 block text-sm text-white/80" for="mensagem"
-                >Desafio</label
-              >
-              <textarea
-                id="mensagem"
-                rows="4"
-                placeholder="Conte brevemente seus objetivos e o cenário atual."
-                class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"
-              ></textarea>
-            </div>
-            <button
-              class="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand-pink to-brand-purple px-6 py-3 font-semibold shadow-soft focus:outline-none focus:ring-2 focus:ring-brand"
-            >
-              Enviar
-            </button>
-            <p id="formOk" class="hidden text-sm text-emerald-400">
-              Agora vamos bater um papo pelo nosso whatsapp para entender um
-              pouco melhor.
-            </p>
-          </form>
-        </div>
-      </div>
-    </section>
-
     <!-- FOOTER -->
     <footer class="border-t border-white/10">
       <div
