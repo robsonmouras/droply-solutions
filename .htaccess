@@ -1,0 +1,29 @@
+# Ativa cache para arquivos estáticos
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # HTML – cache curto (ex.: 1 hora)
+  ExpiresByType text/html "access plus 1 hour"
+
+  # CSS e JS – cache longo (ex.: 1 mês)
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+
+  # Imagens – cache mais longo (ex.: 1 ano)
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png  "access plus 1 year"
+  ExpiresByType image/gif  "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>
+
+# Headers de cache
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|jpg|jpeg|png|gif|webp|svg)$">
+    Header set Cache-Control "public, max-age=31536000"
+  </FilesMatch>
+
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+</IfModule>
