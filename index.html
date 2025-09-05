@@ -101,9 +101,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preconnect"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
     />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    /></noscript>
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
@@ -934,7 +941,7 @@
         class="w-8 h-8"
       />
     </a>
-    <script src="js/script.js"></script>
-    <script src="js/send-form.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/send-form.js" async></script>
   </body>
 </html>
