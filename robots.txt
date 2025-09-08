@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap (caso venha a ter um no futuro)
+# Sitemap: https://www.droply.solutions/sitemap.xml
