@@ -1,0 +1,21 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "description": "Uma landing page moderna e responsiva para a empresa Droply, desenvolvida com HTML, CSS (Tailwind), JavaScript e ícones Remixicon.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robsonmouras/droply-solutions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/robsonmouras/droply-solutions/issues"
+  },
+  "homepage": "https://github.com/robsonmouras/droply-solutions#readme"
+}
