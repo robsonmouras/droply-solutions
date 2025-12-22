@@ -9,7 +9,7 @@ document.getElementById('form-contato').addEventListener('submit', function(e) {
     const desafio = document.getElementById('mensagem').value.trim();
 
     // Número do WhatsApp destino (com DDI +55)
-    const numeroWhatsApp = '556381214381'; // Coloque o número do seu WhatsApp
+    const numeroWhatsApp = '5541987513229'; // Coloque o número do seu WhatsApp
 
     // Monta a mensagem
     const mensagem = `*Novo Contato do Formulário*\n\n` +
