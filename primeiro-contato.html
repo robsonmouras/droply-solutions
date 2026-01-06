@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth">
+  <head>
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="GmpC0UPyF2xbHqQP0IGQ6w" async></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Primeiro Contato | Droply - Sites que Convertem</title>
+    <meta
+      name="description"
+      content="A Droply cria e redesenha sites para pequenas e médias empresas que querem transformar visitantes em contatos, oportunidades e vendas."
+    />
+
+    <!-- Favicon padrão -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Favicon em PNG (moderno e recomendado) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+
+    <!-- Favicon para Apple (iOS) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: [
+                "Inter",
+                "system-ui",
+                "-apple-system",
+                "Segoe UI",
+                "Roboto",
+                "Ubuntu",
+                "Cantarell",
+                "Noto Sans",
+                "Helvetica Neue",
+                "Arial",
+                "sans-serif",
+              ],
+            },
+            colors: {
+              brand: {
+                purple: "#6C63FF",
+                pink: "#FF3CAC",
+                charcoal: "#2F2F2F",
+              },
+            },
+            backgroundImage: {
+              "gradient-radial":
+                "radial-gradient(50% 50% at 50% 50%, rgba(108,99,255,0.25) 0%, rgba(255,60,172,0.18) 35%, rgba(15,15,20,0.0) 70%)",
+              "grid-dark":
+                "linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-6px)" },
+              },
+              shimmer: {
+                "0%": { backgroundPosition: "-200% 0" },
+                "100%": { backgroundPosition: "200% 0" },
+              },
+              glow: {
+                "0%, 100%": {
+                  boxShadow:
+                    "0 0 0px rgba(108,99,255,0.0), 0 0 0px rgba(255,60,172,0.0)",
+                },
+                "50%": {
+                  boxShadow:
+                    "0 0 40px rgba(108,99,255,0.35), 0 0 60px rgba(255,60,172,0.25)",
+                },
+              },
+              hue: {
+                "0%": { filter: "hue-rotate(0deg)" },
+                "100%": { filter: "hue-rotate(360deg)" },
+              },
+              fadeUp: {
+                "0%": { opacity: 0, transform: "translateY(16px)" },
+                "100%": { opacity: 1, transform: "translateY(0)" },
+              },
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              shimmer: "shimmer 2.2s linear infinite",
+              glow: "glow 4s ease-in-out infinite",
+              hue: "hue 16s linear infinite",
+              fadeUp: "fadeUp 700ms ease-out forwards",
+            },
+            boxShadow: {
+              soft: "0 10px 40px rgba(0,0,0,0.25)",
+            },
+            ringColor: {
+              brand: "#6C63FF",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      as="style"
+      onload="this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    /></noscript>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TXB9KFVD");
+    </script>
+    <!-- End Google Tag Manager -->
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      /* helper for reveal */
+      .will-reveal {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      .revealed {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+    </style>
+  </head>
+  <body class="bg-[#0E0E12] text-white font-sans antialiased">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TXB9KFVD"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Decorative BG -->
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10">
+      <div
+        class="absolute inset-0 bg-grid-dark bg-[size:34px_34px] opacity-[.06]"
+      ></div>
+      <div
+        class="absolute -top-48 left-1/2 -translate-x-1/2 w-[1200px] h-[1200px] bg-gradient-radial blur-3xl"
+      ></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header id="mobile-menu" class="sticky top-0 z-40 backdrop-blur">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <a href="/" class="group inline-flex items-center gap-2">
+            <img src="img/logo-b.svg" alt="Logo Droply" />
+          </a>
+
+          <nav class="hidden md:flex items-center gap-8 text-sm text-white/70">
+            <a href="index.html#servicos" class="hover:text-white">Serviços</a>
+            <a href="index.html#cases" class="hover:text-white">Cases</a>
+            <a href="#contato" class="hover:text-white">Contato</a>
+          </nav>
+
+          <a
+            href="#contato"
+            class="hidden sm:inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-brand-pink to-brand-purple px-4 py-2 text-sm font-semibold shadow-soft transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-brand"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15A2.25 2.25 0 012.25 17.25V6.75M21.75 6.75A2.25 2.25 0 0019.5 4.5h-15A2.25 2.25 0 002.25 6.75m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.5a2.25 2.25 0 01-2.36 0l-7.5-4.5A2.25 2.25 0 012.25 6.993V6.75"
+              />
+            </svg>
+            Fale com especialista
+          </a>
+
+          <button
+            id="mobileMenuBtn"
+            aria-label="Abrir Menu"
+            class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 p-2 text-white/80"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobileMenu"
+        class="md:hidden hidden border-t border-white/10 bg-[#111116]"
+      >
+        <nav
+          class="mx-auto max-w-7xl px-4 py-4 flex flex-col gap-3 text-sm text-white/80"
+        >
+          <a class="py-2" href="index.html#servicos">Serviços</a>
+          <a class="py-2" href="index.html#cases">Cases</a>
+          <a class="py-2" href="#contato">Contato</a>
+          <a
+            class="mt-2 inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand-pink to-brand-purple px-4 py-2 font-semibold shadow-soft"
+            href="#contato"
+            >Falar com especialista</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative overflow-hidden">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+        <div class="grid items-center gap-12 md:grid-cols-2">
+          <div class="will-reveal">
+            <h1 class="text-3xl font-extrabold tracking-tight sm:text-5xl">
+              Seu site não pode ser só bonito. Ele precisa <strong>converter</strong>.
+            </h1>
+            <p class="mt-6 text-lg text-white/70">
+              A Droply cria e redesenha sites para pequenas e médias empresas que querem transformar visitantes em contatos, oportunidades e vendas — com UX/UI estratégico focado em conversão.
+            </p>
+            <p class="mt-4 text-xl font-semibold text-white/90">
+              👉 Chega de site parado. Seu site precisa trabalhar por você.
+            </p>
+            <div class="mt-8 flex flex-col sm:flex-row gap-4">
+              <a
+                href="https://wa.me/5541987513229?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista"
+                target="_blank"
+                class="group inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand-pink to-brand-purple px-6 py-3 font-semibold shadow-soft focus:outline-none focus:ring-2 focus:ring-brand"
+              >
+                Falar com um especialista no WhatsApp
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.5 4.5L21 12l-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#contato"
+                class="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-6 py-3 font-medium text-white/80 hover:text-white"
+              >
+                Solicitar diagnóstico gratuito
+              </a>
+            </div>
+          </div>
+
+          <div class="relative will-reveal">
+            <div
+              class="relative mx-auto w-full max-w-md rounded-3xl border border-white/10 bg-[#14141A] p-5 shadow-soft animate-glow"
+            >
+              <div
+                class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-brand-pink/30 to-brand-purple/30 ring-1 ring-inset ring-white/10 grid place-items-center overflow-hidden"
+              >
+                <img
+                  src="img/hero-illustration.jpg"
+                  alt="Ilustração de site convertendo visitantes em clientes"
+                  fetchpriority="high"
+                  style="margin-top: -50px"
+                />
+                <div
+                  class="absolute inset-0 opacity-30"
+                  style="
+                    background: radial-gradient(
+                        600px circle at 0% 0%,
+                        rgba(255, 60, 172, 0.25),
+                        transparent 40%
+                      ),
+                      radial-gradient(
+                        600px circle at 100% 100%,
+                        rgba(108, 99, 255, 0.25),
+                        transparent 40%
+                      );
+                  "
+                ></div>
+              </div>
+              <div class="mt-4 grid grid-cols-2 gap-3 text-xs text-white/70">
+                <div class="rounded-xl border border-white/10 bg-white/5 p-3">
+                  <p class="font-semibold text-white">+58%</p>
+                  <p class="mt-1">Taxa de conversão</p>
+                </div>
+                <div class="rounded-xl border border-white/10 bg-white/5 p-3">
+                  <p class="font-semibold text-white">+3x</p>
+                  <p class="mt-1">Leads qualificados</p>
+                </div>
+                <div
+                  class="rounded-xl border border-white/10 bg-white/5 p-3 col-span-2"
+                >
+                  <p class="font-semibold text-white">Site que converte</p>
+                  <div
+                    class="mt-2 h-2 w-full overflow-hidden rounded bg-white/10"
+                  >
+                    <div
+                      class="h-full w-4/5 bg-gradient-to-r from-brand-pink to-brand-purple animate-shimmer bg-[length:200%_100%]"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O PROBLEMA -->
+    <section class="py-20 md:py-28 border-t border-white/10 bg-[#0B0B10]">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto will-reveal">
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+            O problema (conexão com a dor)
+          </h2>
+          <p class="mt-4 text-xl font-semibold text-white/90">
+            Você já passou por isso?
+          </p>
+          <ul class="mt-8 space-y-4 text-white/80">
+            <li class="flex items-start gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-brand-pink flex-shrink-0"></span>
+              <span>Tem um site, mas ele não gera contatos</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-brand-pink flex-shrink-0"></span>
+              <span>Seu site é antigo, confuso ou não funciona bem no celular</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-brand-pink flex-shrink-0"></span>
+              <span>Você depende só de indicações ou redes sociais</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-brand-pink flex-shrink-0"></span>
+              <span>Já investiu em tráfego pago, mas o site não converte</span>
+            </li>
+          </ul>
+          <p class="mt-8 text-lg text-white/90 font-medium">
+            Se o seu site não foi pensado para guiar o usuário até a ação, ele está te fazendo perder dinheiro todos os dias.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- A SOLUÇÃO -->
+    <section class="py-20 md:py-28 border-t border-white/10">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid items-center gap-12 md:grid-cols-2">
+          <div class="will-reveal">
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+              A solução (Droply)
+            </h2>
+            <p class="mt-4 text-xl font-semibold text-white/90">
+              É aqui que a Droply entra
+            </p>
+            <p class="mt-6 text-lg text-white/80">
+              Na Droply, não criamos sites apenas para "estar online".<br>
+              Criamos experiências digitais orientadas a resultado.
+            </p>
+            <p class="mt-4 text-lg text-white/80">
+              Unimos:
+            </p>
+            <ul class="mt-6 space-y-3 text-white/80">
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-brand-purple flex-shrink-0"></span>
+                <span><strong>Estratégia</strong></span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-brand-purple flex-shrink-0"></span>
+                <span><strong>UX/UI</strong></span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-brand-purple flex-shrink-0"></span>
+                <span><strong>Design moderno</strong></span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-brand-purple flex-shrink-0"></span>
+                <span><strong>Estrutura pensada para conversão</strong></span>
+              </li>
+            </ul>
+            <p class="mt-8 text-lg text-white/90 font-medium">
+              Tudo isso para que seu site tenha um único objetivo: gerar oportunidades reais para o seu negócio.
+            </p>
+          </div>
+
+          <div class="relative will-reveal">
+            <div
+              class="relative mx-auto w-full max-w-md rounded-3xl border border-white/10 bg-[#14141A] p-5 shadow-soft animate-glow"
+            >
+              <div
+                class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-brand-pink/30 to-brand-purple/30 ring-1 ring-inset ring-white/10 grid place-items-center overflow-hidden"
+              >
+                <img
+                  src="img/hero-illustration.jpg"
+                  alt="Ilustração de experiência digital orientada a resultado"
+                  fetchpriority="high"
+                  style="margin-top: -50px"
+                />
+                <div
+                  class="absolute inset-0 opacity-30"
+                  style="
+                    background: radial-gradient(
+                        600px circle at 0% 0%,
+                        rgba(255, 60, 172, 0.25),
+                        transparent 40%
+                      ),
+                      radial-gradient(
+                        600px circle at 100% 100%,
+                        rgba(108, 99, 255, 0.25),
+                        transparent 40%
+                      );
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O QUE FAZEMOS -->
+    <section class="py-20 md:py-28 border-t border-white/10 bg-[#0B0B10]">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="will-reveal text-center">
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+            O que fazemos (serviços)
+          </h2>
+          <p class="mt-3 text-xl font-semibold text-white/90">
+            Nossos serviços
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article
+            class="will-reveal group rounded-3xl border border-white/10 bg-[#14141A] p-6 transition hover:border-white/20"
+          >
+            <div
+              class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-pink/30 to-brand-purple/30 ring-1 ring-inset ring-white/10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m-2.715-1.671a8.959 8.959 0 00-1.71-.437m-5.291 0a8.97 8.97 0 00-1.71.437m2.715 1.671A11.958 11.958 0 0112 21"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold">🔹 Criação de sites institucionais</h3>
+            <p class="mt-3 text-sm text-white/70">
+              Para empresas que ainda não têm presença digital profissional.
+            </p>
+          </article>
+
+          <article
+            class="will-reveal group rounded-3xl border border-white/10 bg-[#14141A] p-6 transition hover:border-white/20"
+          >
+            <div
+              class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-pink/30 to-brand-purple/30 ring-1 ring-inset ring-white/10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold">🔹 Redesign de sites</h3>
+            <p class="mt-3 text-sm text-white/70">
+              Atualizamos seu site para melhorar performance, usabilidade e conversão.
+            </p>
+          </article>
+
+          <article
+            class="will-reveal group rounded-3xl border border-white/10 bg-[#14141A] p-6 transition hover:border-white/20"
+          >
+            <div
+              class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-pink/30 to-brand-purple/30 ring-1 ring-inset ring-white/10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold">🔹 UX/UI com foco em conversão</h3>
+            <p class="mt-3 text-sm text-white/70">
+              Arquitetura da informação, jornadas claras e CTAs estratégicos.
+            </p>
+          </article>
+
+          <article
+            class="will-reveal group rounded-3xl border border-white/10 bg-[#14141A] p-6 transition hover:border-white/20"
+          >
+            <div
+              class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-pink/30 to-brand-purple/30 ring-1 ring-inset ring-white/10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold">🔹 Design e consultoria para produtos digitais</h3>
+            <p class="mt-3 text-sm text-white/70">
+              Para quem precisa evoluir produtos, plataformas ou sistemas.
+            </p>
+          </article>
+
+          <article
+            class="will-reveal group rounded-3xl border border-white/10 bg-[#14141A] p-6 transition hover:border-white/20"
+          >
+            <div
+              class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-pink/30 to-brand-purple/30 ring-1 ring-inset ring-white/10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 13.5l3 3 5.25-5.25m1.5-1.5L21 4.5m0 0v6m0-6h-6"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold">🔹 Apoio estratégico para tráfego pago</h3>
+            <p class="mt-3 text-sm text-white/70">
+              Seu site preparado para receber e converter tráfego qualificado.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- POR QUE CONFIAR -->
+    <section class="py-20 md:py-28 border-t border-white/10">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto will-reveal">
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+            Por que confiar mesmo sem cases?
+          </h2>
+          <p class="mt-4 text-xl font-semibold text-white/90">
+            Por que a Droply funciona?
+          </p>
+          <ul class="mt-8 space-y-4 text-white/80">
+            <li class="flex items-start gap-3">
+              <span class="mt-1 text-brand-purple font-bold">✔️</span>
+              <span><strong>Processo estruturado e validado</strong></span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 text-brand-purple font-bold">✔️</span>
+              <span><strong>Decisões baseadas em boas práticas de UX e comportamento do usuário</strong></span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 text-brand-purple font-bold">✔️</span>
+              <span><strong>Foco total em conversão, não em estética vazia</strong></span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 text-brand-purple font-bold">✔️</span>
+              <span><strong>Experiência sólida em produtos digitais e projetos reais de mercado</strong></span>
+            </li>
+          </ul>
+          <p class="mt-8 text-lg text-white/80">
+            Mesmo sem mostrar cases neste momento, nosso método é o mesmo utilizado por produtos e empresas digitais que crescem de forma consistente.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="py-20 md:py-28 border-t border-white/10 bg-[#0B0B10]">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto will-reveal">
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+            Como funciona (passo a passo)
+          </h2>
+          <p class="mt-4 text-xl font-semibold text-white/90">
+            Nosso processo é simples e eficiente
+          </p>
+          <ol class="mt-8 space-y-4 text-white/80 list-decimal list-inside">
+            <li class="pl-4"><strong>Entendemos seu negócio e seus objetivos</strong></li>
+            <li class="pl-4"><strong>Definimos a estratégia e estrutura do site</strong></li>
+            <li class="pl-4"><strong>Criamos o design com foco em conversão</strong></li>
+            <li class="pl-4"><strong>Desenvolvemos e ajustamos para performance</strong></li>
+            <li class="pl-4"><strong>Publicamos e acompanhamos os resultados iniciais</strong></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FORTE -->
+    <section
+      id="contato"
+      class="py-20 md:py-28 border-t border-white/10"
+    >
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto will-reveal text-center mb-12">
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+            Vamos transformar seu site em uma ferramenta de vendas?
+          </h2>
+          <p class="mt-4 text-lg text-white/70">
+            Preencha o formulário ou fale direto com a gente pelo WhatsApp.<br>
+            Vamos entender seu cenário e indicar o melhor caminho para o seu negócio.
+          </p>
+        </div>
+
+        <div class="max-w-2xl mx-auto">
+          <form class="will-reveal space-y-4" id="form-contato">
+            <div>
+              <label class="mb-2 block text-sm text-white/80" for="nome"
+                >Nome</label
+              >
+              <input
+                id="nome"
+                required
+                type="text"
+                placeholder="Seu nome"
+                class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"
+              />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm text-white/80" for="email"
+                >E-mail</label
+              >
+              <input
+                id="email"
+                required
+                type="email"
+                placeholder="voce@empresa.com"
+                class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"
+              />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm text-white/80" for="telefone"
+                >Telefone</label
+              >
+              <input
+                id="telefone"
+                type="text"
+                placeholder="Telefone"
+                class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"
+              />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm text-white/80" for="empresa"
+                >Empresa</label
+              >
+              <input
+                id="empresa"
+                type="text"
+                placeholder="Nome da empresa"
+                class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"
+              />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm text-white/80" for="mensagem"
+                >Mensagem</label
+              >
+              <textarea
+                id="mensagem"
+                rows="4"
+                placeholder="Conte brevemente seus objetivos e o cenário atual."
+                class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-brand"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand-pink to-brand-purple px-6 py-3 font-semibold shadow-soft focus:outline-none focus:ring-2 focus:ring-brand"
+            >
+              Enviar
+            </button>
+            <p id="formOk" class="hidden text-sm text-emerald-400">
+              Agora vamos bater um papo pelo nosso whatsapp para entender um
+              pouco melhor.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="py-14">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div
+          class="will-reveal relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-r from-brand-pink/20 to-brand-purple/20 p-8 ring-1 ring-inset ring-white/10"
+        >
+          <div
+            class="absolute inset-0 -z-10 opacity-30"
+            style="
+              background: radial-gradient(
+                  600px circle at 20% 0%,
+                  rgba(255, 60, 172, 0.35),
+                  transparent 40%
+                ),
+                radial-gradient(
+                  600px circle at 80% 100%,
+                  rgba(108, 99, 255, 0.35),
+                  transparent 40%
+                );
+            "
+          ></div>
+          <div class="text-center">
+            <h3 class="text-2xl font-bold">
+              Seu site pode fazer muito mais pela sua empresa.
+            </h3>
+            <p class="mt-2 text-white/70">
+              Se você quer um site que realmente gere resultado, a Droply é o parceiro certo.
+            </p>
+            <a
+              href="https://wa.me/5541987513229?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20a%20Droply"
+              target="_blank"
+              class="mt-6 inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand-pink to-brand-purple px-6 py-3 font-semibold shadow-soft focus:outline-none focus:ring-2 focus:ring-brand"
+              >Falar com a Droply no WhatsApp</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10">
+      <div
+        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-4"
+      >
+    
+        <p>
+          © <span id="year"></span> Droply Consultoria — Todos os direitos
+          reservados.
+        </p>
+        <a href="mailto:contato@droply.solutions">contato@droply.solutions</a>
+        <div class="flex items-center gap-4">
+          <a
+            href="https://www.linkedin.com/company/droply-solution"
+            target="_blank"
+            class="hover:text-white"
+            >LinkedIn</a
+          >
+          <a
+            href="termo-privacidade.html"
+            target="_blank"
+            class="hover:text-white"
+            >Política de Privacidade</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Flutuante -->
+    <a
+      href="https://wa.me/5541987513229?text=Ola%2C%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20sobre%20um%20projeto"
+      target="_blank"
+      class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-green-500 rounded-full shadow-lg hover:scale-110 transition-transform"
+      aria-label="Fale conosco no WhatsApp"
+    >
+      <!-- Ícone WhatsApp simplificado -->
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        alt="WhatsApp"
+        class="w-8 h-8"
+      />
+    </a>
+    <script src="js/script.js" defer></script>
+    <script src="js/send-form.js" async></script>
+  </body>
+</html>
+
